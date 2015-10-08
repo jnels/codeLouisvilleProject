@@ -1,0 +1,40 @@
+* {
+	box-sizing: border-box;
+}
+
+.header {
+	float: left;
+	position: fixed;
+	top: 0;
+	right: 0;
+	width: 100%;
+	height: 15%;
+	border: 2px solid black;
+	background-color: grey;
+}
+
+h1, h2, h3 {
+	position: absolute;
+}
+
+.poetry {
+	display: inline-block;
+}
+
+h1 {
+  bottom: 1%;
+  right: 1%;
+  font-size: 4vw;
+}
+
+h2 {
+  bottom: 3%;
+  right: 32%;
+  font-size: 2em;
+}
+
+h3 {
+	top: 10%;
+  left: 12%;
+  font-size: 3vw /*4em*/;
+}
