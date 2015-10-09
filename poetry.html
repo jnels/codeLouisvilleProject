@@ -4,26 +4,37 @@
 
 	<head>
 		<link rel="stylesheet" type="text/css" href="normalize.css">
-		</style>
-		<link rel="stylesheet" type="text/css" href="secondary.css">
-		</style>
+		<link rel="stylesheet" type="text/css" href="main.css">
+		<link href='https://fonts.googleapis.com/css?family=Cabin+Sketch|Merriweather:400,700,400italic' rel='stylesheet' type='text/css'>
 	</head>
 
 	<body>
-		<!--Header-->
-		<div class="header">
-			<h1>Joel W Nelson</h1>
-			<h2>Web Developer</h2>
-			<h3>Poet</h3>
-		</div>
-		<nav class="navBar">
+		<header>
+<!--Nav bar------------------------------------>
+		<nav class="navigation">
 			<ul>
-				<li>About</li>
-				<li>Poetry</li>
-				<li>Web Development</li>
-				<li>Contact</li>
-			</ul>
+				<li><a href="about.html">About Joel</a></li>
+				<li><a href="poetry.html">Poetry</li>
+				<li><a href="web-developer.html">Web Portfolio</a></li>
+				<li><a href="contact.html">Contact</a></li>
+		 </ul>
 		</nav>
+		
+<!--Header---------------------------->		
+		
+			
+			<div class="column-left">
+				<h3 class="header-selected"><a href="poetry.html">Poet</a></h2>
+			</div>
+			
+			<div class="column-right">
+				<h1><a href="about.html">Joel W Nelson</a></h1>
+				<h2><a href="web-developer.html">Web Developer</a></h3>
+			</div>
+			
+		</header>
+		
+<!--Poetry canvas ------------------------->
 
 			<div class="poetryWrap" </div>
 				<ul>
@@ -32,7 +43,8 @@
 					<li>The Body Washer</li>
 					<li>Found Poetry Generator</li>
 				</ul>
-			</div>
+		</div>
+
 			<!--This page to contain some published poems on a canvas that user can mark or erase. Page to also include a found poetry generator they can use to import text and create a found poem-->
 
 	</body>
