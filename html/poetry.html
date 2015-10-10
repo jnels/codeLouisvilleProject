@@ -1,0 +1,86 @@
+<DOCTYPE! html>
+	<html>
+	<title>Joel W Nelson | Poet | Web Developer</title>
+
+	<head>
+		<link rel="stylesheet" type="text/css" href="../css/normalize.css">
+		<link rel="stylesheet" type="text/css" href="../css/main.css">
+		<link href="https://fonts.googleapis.com/css?family=Cabin+Sketch|Merriweather:400,700,400italic" rel='stylesheet' type='text/css'>
+	</head>
+
+	<body>
+
+
+		<!--Header---------------------------->
+
+		<header>
+			<div class="column-left">
+				<h3 class="header-selected"><a href="../html/poetry.html">Poet</a></h2>
+			</div>
+			
+			<div class="column-right">
+				<h1><a href="../html/about.html">Joel W Nelson</a></h1>
+				<h2><a href="../html/web-developer.html">Web Developer</a></h3>
+			</div>
+
+		</header>
+
+		<nav class="navigation">
+			<ul>
+				<li><a href="../html/about.html">About Joel</a></li>
+				<li><a href="../html/poetry.html">Poetry</a></li>
+				<li><a href="../html/web-developer.html">Web Development</a></li>
+				<li><a href="../html/contact.html">Contact</a></li>
+			</ul>
+		</nav>
+
+		<!--Poem list ------------------------->
+		<div id="poetry-wrap">
+			<form>
+				<input type="radio" name="poetry">Ashes, Ashes</input>
+				<br>
+				<input type="radio" name="poetry">The Drinking Hole</input>
+				<br>
+				<input type="radio" name="poetry">The Body Washer</input>
+				<br>
+				<input type="radio" name="poetry">Create your own blackout/erasure poetry</input>
+			</form>
+		</div>
+
+		<!--Poetry canvas ------------------------->
+		<div id="canvas-container">
+			<canvas id="poetry-canvas"></canvas>
+						<!--Color controls-->
+			<div class="controls">
+				<ul>
+					<li class="black selected-color"></li>
+					<li class="white"></li>
+				</ul>
+			</div>
+		</div>
+
+		<!--Text input-->
+		<div>
+
+
+			<!--Clear and add new text-->
+			<button type=button id="new-canvas-button">New</button>
+			<button type=button id="save-canvas-button">Save</button>
+
+
+
+			<form id="poetry-input">
+				<textarea id="input-text" cols="50" wrap="hard"></textarea>
+				<button id="submit-button" type="button">Submit</button>
+			</form>
+		</div>
+
+
+		<script src="http://code.jquery.com/jquery-1.11.0.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/fabric.js"></script>
+		<script src="../js/draw.js"></script>
+
+	</body>
+
+
+	</html>

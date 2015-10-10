@@ -7,6 +7,10 @@ a {
 	color: inherit;
 }
 
+ul {
+	list-style: none;
+}
+
 
 /**************************************
 Fonts
@@ -33,9 +37,7 @@ General
 **************************************/
 
 #main-container
-/*, header*/
-
-{
+/*, header*/ {
 	background: white url("img/road-clouds-street-path.jpg") no-repeat center center;
 	background-size: cover;
 }
@@ -46,6 +48,7 @@ Navigation
 **************************************/
 
 .navigation {
+	display: none;
 	position: absolute;
 	top: 0.5%;
 	left: 0.5%;
@@ -74,6 +77,7 @@ header {
 	width: 100%;
 	min-height: 100px;
 	margin: 0;
+	border-bottom: 2px solid black;
 }
 
 header h1,
@@ -176,6 +180,83 @@ Home page
 
 
 /************************
+Poetry
+*************************/
+
+#poetry-input {
+	margin: 2% auto;
+}
+
+#poetry-input textarea {
+	width: 320px;
+}
+
+
+/* Canvas ******************/
+
+#canvas-container {
+	margin: 0 auto;
+	width: 321px;
+	text-align: center;
+	border: 1px solid grey;
+}
+
+/* Color Select *******************/
+
+.controls {
+	display: none;
+	min-height: 60px;
+	margin: 0 auto;
+/*	width: 600px;*/
+	border-radius: 5px;
+	overflow: hidden;
+}
+
+ul {
+	list-style:none;
+	margin: 0;
+	float: 	left;
+	padding: 10px 0 20px;
+	width: 100%;
+	text-align: center;
+}
+
+.controls ul li{
+	display: inline-block;
+	margin: 0 5px 10px;
+	height: 54px;
+	width: 54px;
+	border-radius: 60px;
+	cursor: pointer;
+	border: 1px solid black;
+	box-shadow: 0 3px 0 0 #222;
+}
+
+.black {
+	background: #000;
+}
+
+.white {
+	background: #fff;
+}
+
+/* Canvas Buttons *******************/
+
+#submit-canvas {
+
+}
+
+#new-canvas-button {
+	display: none;
+
+}
+
+#save-canvas-button {
+
+}
+
+
+/************************
 Contact Form
 *************************/
 
@@ -196,8 +277,8 @@ form h1 {
 	text-align: center;
 }
 
-input,
-textarea {
+.contact input,
+.contact textarea {
 	width: 100%;
 	border-radius: 8px;
 	padding: 5px 3px 3px 5px;
