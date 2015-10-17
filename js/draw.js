@@ -14,6 +14,7 @@ var canvas = new fabric.Canvas("poetry-canvas", {
 
 canvas.freeDrawingBrush.width = 10;
 
+
 //Allow user to add text to canvas
 $("#submit-button").click(function(){
 	//Put value of textarea into paragraph
@@ -34,7 +35,7 @@ $("#submit-button").click(function(){
 	$("#poetry-canvas").css("display", "block");
 	$("#new-canvas-button").css("display","block");
 	$(".controls").css("display","block")
-	});
+});
 
 //Color selection
 $(".controls").on("click", "li", function(){

@@ -1,0 +1,76 @@
+<DOCTYPE! html>
+	<hmtl>
+		<title>Joel W Nelson | Web Developer | Poet</title>
+
+		<head>
+			<style>
+				* {
+					box-sizing: border-box;
+					margin: 0;
+				}
+				
+				body {
+					background-color: black;
+					width: 100%;
+					height: 100%;
+				}
+				
+				#container {
+					width: 320px;
+					height: 320px;
+					margin: 5% auto;
+				}
+				
+				.basicBox {
+					display: inline-block;
+					height: 5px;
+					width: 5px;
+					margin: 0;
+					float: left;
+					border-radius: 20%;
+				}
+			</style>
+		</head>
+
+		<body>
+			
+			<div id="container">
+			
+			</div>
+
+		</body>
+		
+		<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+		<script>
+			var rgbValue;
+			var rndColor = [];
+
+			//Generates rgb value
+			function newColor() {
+				for (x = 0; x < 3; x++) {
+					rgbValue = Math.floor(Math.random() * 255);
+					rndColor[x] = rgbValue;
+				}
+				rgbValue = "rgb(" + rndColor + ")";
+			}
+
+			function generate() {
+				//Creates boxes from div with unique ID
+				for (i = 0; i < 4096; i += 1) {
+					var boxID = "box" + i;
+					var divContents = "<div class = basicBox id='";
+					divContents += boxID + "'></div> ";
+					$("#container").append(divContents);
+					
+					//Gets random number and sets as background
+					newColor()
+					var correctedID = "#" + boxID;
+					$(correctedID).css("background-color", rgbValue)
+				}
+			}
+
+			//Changes colors from timer
+			var previewTimer = setInterval(generate, 500);
+		</script>
+
+	</hmtl>

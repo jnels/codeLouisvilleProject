@@ -1,0 +1,161 @@
+<DOCTYPE! html>
+	<html>
+	<title>Joel W Nelson | Web Developer | Poet</title>
+
+	<head>
+		<link href='https://fonts.googleapis.com/css?family=VT323' rel='stylesheet' type='text/css'>
+		<style>
+			body {
+				color: green;
+				font-family: "VT323";
+				font-weight: bold;
+				margin: 0 auto;
+				background-color: black;
+			}
+			
+			h1 {
+				text-align: center;
+				font-size: 1 em;
+				margin-top: 0;
+			}
+			
+			h2 {
+				text-align: center;
+				font-weight: normal;
+				font-size: 1.2em;
+			}
+			
+			h3 {
+				text-align: left;
+				margin: 0;
+				padding; 2px;
+			}
+			
+			form {
+				font-size: 1.2em;
+				text-align: center;
+			}
+			
+			#setGain {
+				width: 100%;
+			}
+			
+			input {
+				background-color: black;
+				border: 2px solid green;
+				padding-left: 5px;
+				input-size: 15px;
+				width: 60px;
+				color: green;
+				font-weight: bold;
+				font-family: "VT323";
+				font-size: 1em;
+			}
+			
+			#laserShow {
+				margin: 2% auto;
+				width: 480px;
+				height: 360px;
+			}
+			
+			a {
+				text-decoration: none;
+				color: green;
+			}
+			
+			a:hover {
+				color: lightgreen;
+			}
+		</style>
+
+	</head>
+
+	<body>
+		<h3><a href="web-developer.html"><< Joel W Nelson</h2></a>
+		
+		<h1>Laser Show</h1>
+
+		<div id="setGain">
+			<form>
+				<label for="input">Set Gain</label>
+				<input type="number" name="input" id="input" min="1" max="1100" autocomplete="off">
+			</form>
+		</div>
+
+		<div id="laserShow">
+			<canvas id="canvas" width="480" height="360"></canvas>
+		</div>
+
+		<h2>Move mouse or touch screen to begin</h2>
+
+		<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+		<script>
+			var c2 = canvas.getContext('2d');
+			var canvasDimensions;
+			var rgbValue;
+			var rndColor = [];
+			var rgbValue;
+			var x;
+			var y;
+			numberOfLines = 1;
+			document.getElementById("input").defaultValue = "1";
+
+			function newColor() {
+				for (x = 0; x < 3; x++) {
+					rgbValue = Math.floor(Math.random() * 255);
+					rndColor[x] = rgbValue;
+				}
+				rgbValue = "rgb(" + rndColor + ")";
+				return rgbValue;
+			}
+
+			function coordinates() {
+				x = Math.floor(Math.random() * 480);
+				y = Math.floor(Math.random() * 360);
+			}
+
+			function newLine() {
+				coordinates()
+				c2.lineTo(x, y)
+			}
+
+			function create() {
+				c2.clearRect(0, 0, canvas.width, canvas.height);
+
+				//Create origin
+				coordinates()
+				c2.beginPath();
+				c2.moveTo(x, y);
+
+				//Draw lines
+				for (i = 0; i < numberOfLines; i++) {
+					newLine()
+					c2.strokeStyle = rgbValue;
+					c2.lineTo(x, y)
+				}
+
+				c2.closePath();
+				c2.strokeStyle = newColor();
+				c2.stroke();
+			}
+
+			//Sets number of lines
+			$("input").on("keyup mouseup", function () {
+				numberOfLines = $(this).val();
+				if (numberOfLines >= 1100) {
+					document.getElementById("input").value = "1100";
+					numberOfLines = 1100;
+				} else if (numberOfLines < 1) {
+					document.getElementById("input").value = "1";
+					numberOfLines = 1;
+				}
+			});
+
+			$("#laserShow").on("mousemove touchmove", function () {
+				create()
+			});
+		</script>
+
+	</body>
+
+	</html>

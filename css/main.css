@@ -1,4 +1,4 @@
-* {
+	* {
 	box-sizing: border-box;
 }
 
@@ -26,8 +26,11 @@ input {
 h1,
 h2,
 h3,
-.navigation {
-	font-family: "Cabin Sketch", Arial, serif;
+h4,
+h5,
+.navigation,
+form label {
+	font-family: "Amatic SC", Arial, serif;
 	font-weight: 700;
 }
 
@@ -36,35 +39,17 @@ h3,
 General
 **************************************/
 
-#main-container
-/*, header*/ {
-	background: white url("img/road-clouds-street-path.jpg") no-repeat center center;
+#home-page,
+header {
+	background: url(../img/Digital-vs.-Analog-free-license-CC0.jpg) no-repeat center center;
 	background-size: cover;
 }
 
-
-/**************************************
-Navigation
-**************************************/
-
-.navigation {
-	display: none;
+.translucent-layer {
 	position: absolute;
-	top: 0.5%;
-	left: 0.5%;
-	font-size: 2em;
-	border: 1.5px solid gray;
-	/*	background: rgba(255, 255, 255, 0.3);*/
-	border-radius: 10%;
-	padding: 0;
-}
-
-.navigation ul {
-	margin: 2px 0 2px -30px;
-}
-
-.navigation ul li {
-	padding-bottom: 10px;
+	height: 100%;
+	width: 100%;
+	background-color: rgba(255, 255, 255, 0.45);
 }
 
 /**************************************
@@ -73,235 +58,246 @@ Header
 
 header {
 	position: relative;
-	height: 20%;
+	height: 80px;
 	width: 100%;
-	min-height: 100px;
-	margin: 0;
-	border-bottom: 2px solid black;
 }
 
-header h1,
-header h2,
-header h3 {
-	position: absolute;
-}
-
-header h1 {
-	font-size: 1.3em;
+#name,
+.nav {
 	margin: 0;
-	bottom: 6%;
-	right: 15%;
-}
-
-header h2 {
-	margin: 0;
-	top: 14%;
-	font-size: 1.2em;
-	left: 10%;
+	float: left;
 	text-align: center;
-	line-height: 0.9em;
 }
 
-header h3 {
-	margin: 0;
-	bottom: 20%;
-	right: 2%;
-	font-size: 1.2em;
+#name {
+	font-size: 2.5em;
+	width: 100%;
 }
 
-.header-selected {
-	font-size: 1.5em;
-	color: aqual;
+.nav {
+	display: inline;
+	font-size: 1.3em;
+	width: 33.33%
 }
 
-.column-left,
-.column-right {
-	position: absolute;
-	height: 100%;
+@media screen and (min-width: 436px) {
+	header {
+		display: inline-block;
+		font-size: 110%;
+	}
+	
+	#name {
+		width: 40%;
+		padding-top: 10px;
+	}
+	
+	.nav {
+		width: 20%;
+	}
+	
+	#about {
+		padding-top: 35px;
+	}
+	
+	#poetry {
+		padding-top: 15px;
+	}
+	
+	#web {
+		padding-top: 45px;
+	}
 }
 
-.column-left {
-	top: 0%;
-	left: 0%;
-	width: 40%;
+@media screen and (min-width: 600px) {
+	header {
+		height: 120px;
+		font-size: 160%;
+	}
+	
+	#name {
+		height: 120px;
+		padding-top: 31px;
+		width: 40%;
+		text-align: center;
+		line-height: .9em;
+	}
+	
+	#about {
+		padding-top: 45px;
+	}
+	
+	#poetry {
+		padding-top: 25px;
+	}
+	
+	#web {
+		padding-top: 55px;
+	}
 }
-
-.column-right {
-	top: 0%;
-	left: 40%;
-	width: 60%;
-}
-
 
 /**************************************
 Home page
 **************************************/
+	#home-page {
+		position: relative;
+		top: 0;
+		left: 0;
+		height: 100%;
+		width: 100%;
+	}
+	
+	.home {
+		position: absolute;
+		color: black;
+	}
+	
+	#home-name {
+		bottom: 5%;
+		right: 7%;
+		font-size: 3em;
+		line-height: .9em;
+		text-align: right;
+	}
+	
+	#homepage h2 {
+		bottom: 40%;
+		right: 2%;
+		font-size: 2.2em;
+	}
+	
+	#homepage h3 {
+		bottom: 60%;
+		font-size: 2em;
+		right: 20%;
+		text-align: center;
+		line-height: 0.9em;
+	}
 
-#main-container {
-	position: fixed;
-	/*
-	background: linear-gradient(to top, #fff -160%, transparent, #fff 160%), url("https://static.pexels.com/photos/2000/nature-sky-field-path.jpg") no-repeat center;
-	background-size: cover;
-*/
-	top: 0;
-	left: 0;
-	height: 100%;
-	width: 100%;
-}
-
-#main-container h1,
-#main-container h2,
-#main-container h3 {
-	position: absolute;
-	color: black;
-}
-
-#main-container h1 {
-	bottom: 2%;
-	right: 5%;
-	font-size: 5em;
-	line-height: .9em;
-	text-align: right;
-}
-
-#main-container h2 {
-	bottom: 40%;
-	right: 2%;
-	font-size: 4em;
-}
-
-#main-container h3 {
-	bottom: 60%;
-	font-size: 3em;
-	right: 20%;
-	text-align: center;
-	line-height: 0.9em;
-}
-
-
+	
 /************************
 Poetry
 *************************/
-
-#poetry-input {
-	margin: 2% auto;
-}
-
-#poetry-input textarea {
-	width: 320px;
-}
-
-
-/* Canvas ******************/
-
-#canvas-container {
-	margin: 0 auto;
-	width: 321px;
-	text-align: center;
-	border: 1px solid grey;
-}
-
-/* Color Select *******************/
-
-.controls {
-	display: none;
-	min-height: 60px;
-	margin: 0 auto;
-/*	width: 600px;*/
-	border-radius: 5px;
-	overflow: hidden;
-}
-
-ul {
-	list-style:none;
-	margin: 0;
-	float: 	left;
-	padding: 10px 0 20px;
-	width: 100%;
-	text-align: center;
-}
-
-.controls ul li{
-	display: inline-block;
-	margin: 0 5px 10px;
-	height: 54px;
-	width: 54px;
-	border-radius: 60px;
-	cursor: pointer;
-	border: 1px solid black;
-	box-shadow: 0 3px 0 0 #222;
-}
-
-.black {
-	background: #000;
-}
-
-.white {
-	background: #fff;
-}
-
-/* Canvas Buttons *******************/
-
-#submit-canvas {
-
-}
-
-#new-canvas-button {
-	display: none;
-
-}
-
-#save-canvas-button {
-
-}
-
-
+	#poetry-input {
+		margin: 2% auto;
+	}
+	
+	#poetry-input textarea {
+		width: 320px;
+	}
+	
+	/* Canvas ******************/
+	#canvas-container {
+		margin: 0 auto;
+		width: 321px;
+		text-align: center;
+		border: 1px solid grey;
+	}
+	
+	/* Color Select *******************/
+	.controls {
+		display: none;
+		min-height: 60px;
+		margin: 0 auto;
+		/*	width: 600px;*/
+		border-radius: 5px;
+		overflow: hidden;
+	}
+	
+	ul {
+		list-style: none;
+		margin: 0;
+		float: left;
+		padding: 10px 0 20px;
+		width: 100%;
+		text-align: center;
+	}
+	
+	.controls ul li {
+		display: inline-block;
+		margin: 0 5px 10px;
+		height: 54px;
+		width: 54px;
+		border-radius: 60px;
+		cursor: pointer;
+		border: 1px solid black;
+		box-shadow: 0 3px 0 0 #222;
+	}
+	
+	.black {
+		background: #000;
+	}
+	
+	.white {
+		background: #fff;
+	}
+	
+	/* Canvas Buttons *******************/
+	#submit-canvas {}
+	#new-canvas-button {
+		display: none;
+	}
+	
+	#save-canvas-button {
+		
+	}
+	
+/************************
+Web Developer
+*************************/
+	#web-projects {
+		width: 100%;
+		padding: 5%;
+	}
+	
+	#web-projects img {
+		display: inline-block;
+		min-width: 200px;
+		max-width: 320px;
+		width: 50%;
+		height: auto;
+		margin: 0 auto;
+	}
+	
 /************************
 Contact Form
 *************************/
-
-form {
-	min-width: 250px;
-	max-width: 350px;
-	margin: 2% auto;
-	align: center;
-}
-
-form label {
-	font-family: "Cabin Sketch", Arial, serif;
-	font-weight: 700;
-	font-size: 1.2em;
-}
-
-form h1 {
-	text-align: center;
-}
-
-.contact input,
-.contact textarea {
-	width: 100%;
-	border-radius: 8px;
-	padding: 5px 3px 3px 5px;
-	font-size: 1em;
-}
-
-textarea {
-	resize: vertical;
-	min-height: 100px;
-	max-height: 200px;
-}
-
-fieldset {
-	margin-bottom: 5px;
-	/*  background: forestgreen url("http://versporttvonline.com/wp-content/uploads/download-texture-background-green-hd-hd-wallpapers-20140823124408-53f88c9874a83.jpg");*/
-	border-radius: 8px;
-	background-size: cover;
-}
-
-.formHeading {
-	padding: 2px 5px;
-	color: white;
-	background: black;
-	border-radius: 50px;
-	border: solid forestgreen 2px;
-}
+	form {
+		min-width: 250px;
+		max-width: 350px;
+		margin: 2% auto;
+		/*	align: center;*/
+	}
+	
+	form label {
+		font-size: 1.2em;
+	}
+	
+	form h1 {
+		text-align: center;
+	}
+	
+	.contact input,
+	.contact textarea {
+		width: 100%;
+		border-radius: 8px;
+		padding: 5px 3px 3px 5px;
+		font-size: 1em;
+	}
+	textarea {
+		resize: vertical;
+		min-height: 100px;
+		max-height: 200px;
+	}
+	fieldset {
+		margin-bottom: 5px;
+		/*  background: forestgreen url("http://versporttvonline.com/wp-content/uploads/download-texture-background-green-hd-hd-wallpapers-20140823124408-53f88c9874a83.jpg");
+	background-size: cover;*/
+		border-radius: 8px;
+	}
+	.formHeading {
+		padding: 2px 5px;
+		color: white;
+		background: black;
+		border-radius: 50px;
+		border: solid forestgreen 2px;
+	}
