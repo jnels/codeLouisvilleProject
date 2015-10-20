@@ -11,6 +11,9 @@ ul {
 	list-style: none;
 }
 
+.poem {
+	display: none;
+}
 
 /**************************************
 Fonts
@@ -60,6 +63,8 @@ header {
 	position: relative;
 	height: 80px;
 	width: 100%;
+/*	border-bottom: 2px solid black;*/
+	box-shadow: 0px 2px 5px #908070 /*#708090*/;
 }
 
 #name,
@@ -138,40 +143,96 @@ header {
 /**************************************
 Home page
 **************************************/
-	#home-page {
-		position: relative;
-		top: 0;
-		left: 0;
-		height: 100%;
-		width: 100%;
-	}
+#home-page {
+	position: relative;
+	top: 0;
+	left: 0;
+	height: 100%;		
+	width: 100%;
+}
+
+#columnLeft {
+	position: absolute;
+	width: 40%;
+	height: 100%;
+	top: 0;
+	left: 0;
+}
+
+#columnRight {
+	position: absolute;
+	width: 60%;
+	height: 100%;
+	top: 0;
+	left: 40%;
+}
 	
 	.home {
 		position: absolute;
 		color: black;
+		text-align: center;
+		line-height: 0.9;
 	}
 	
 	#home-name {
 		bottom: 5%;
-		right: 7%;
+		left: 20%;
 		font-size: 3em;
 		line-height: .9em;
-		text-align: right;
 	}
 	
-	#homepage h2 {
-		bottom: 40%;
-		right: 2%;
+	#home-poet {
+		bottom: 35%;
+		right: 20%;
 		font-size: 2.2em;
 	}
 	
-	#homepage h3 {
+	#home-web {
 		bottom: 60%;
 		font-size: 2em;
-		right: 20%;
-		text-align: center;
-		line-height: 0.9em;
+		left: 30%;
 	}
+
+@media screen and (min-width: 400px) {
+	
+	.home {
+		
+	}
+	
+	#home-name {
+		font-size: 4em;
+	}
+	
+	#home-poet {
+		font-size: 3em;
+	}
+	
+	#home-web {
+		font-size: 2.5em;
+	}
+}
+
+@media screen and (min-width: 650px) {
+	
+	.home {
+		
+	}
+	
+	#home-name {
+		font-size: 5em;
+		left: 30%
+	}
+	
+	#home-poet {
+		font-size: 3.5em;
+	}
+	
+	#home-web {
+		font-size: 2.5em;
+		right: 20%;
+	}
+	
+}
 
 	
 /************************
@@ -244,19 +305,42 @@ Poetry
 /************************
 Web Developer
 *************************/
+	
+/*
+#projectWrap {
+	max-width: 940px;
+	margin: 0 auto;
+	padding: 0 5%;
+	clear: both;
+	background-color: red;
+*/
+}
+
+#web-projects {
+	margin: 0;
+	padding: 0;
+}
+	
+#web-projects li {
+	float: left;
+	width: 45%;
+	height: auto;
+	margin: 2.5%;
+  }
+
+img {
+	max-width: 100%;
+}
+
+@media screen and (min-width: 960px) {
 	#web-projects {
-		width: 100%;
-		padding: 5%;
+		margin: 0 10%;
 	}
 	
-	#web-projects img {
-		display: inline-block;
-		min-width: 200px;
-		max-width: 320px;
-		width: 50%;
-		height: auto;
-		margin: 0 auto;
+	#web-projects li {
+		width: 35%;
 	}
+}
 	
 /************************
 Contact Form

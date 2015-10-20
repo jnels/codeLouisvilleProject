@@ -1,5 +1,5 @@
-var canvas;
-var printText;
+//var canvas;
+//var printText;
 var $userText;
 var drawColor;
 
@@ -14,15 +14,9 @@ var canvas = new fabric.Canvas("poetry-canvas", {
 
 canvas.freeDrawingBrush.width = 10;
 
-
-//Allow user to add text to canvas
-$("#submit-button").click(function(){
-	//Put value of textarea into paragraph
-  $userText = $("#input-text").val();
-	
-	//Add to canvas
-	printText = new fabric.Text($userText, { 
-		left: 10, 
+function displayPoem (userText) {
+	var printText = new fabric.Text(userText, { 
+				left: 10, 
 		top: 10,
 		fontSize: 18,
 		fontFamily: "Merriweather"
@@ -30,12 +24,38 @@ $("#submit-button").click(function(){
 	
 	canvas.add(printText);
 	
-	//Hide form, show new button
+		//Hide form, show new button
 	$("#form").hide();
 	$("#poetry-canvas").css("display", "block");
 	$("#new-canvas-button").css("display","block");
 	$(".controls").css("display","block")
+}
+
+
+
+//Allow user to add text to canvas
+$("#submit-button").click(function(){
+	//Put value of textarea into paragraph
+  $userText = $("#input-text").val();
+	displayPoem($userText)
 });
+	
+//	//Add to canvas
+//	printText = new fabric.Text($userText, { 
+//		left: 10, 
+//		top: 10,
+//		fontSize: 18,
+//		fontFamily: "Merriweather"
+//	});
+//	
+//	canvas.add(printText);
+	
+//	//Hide form, show new button
+//	$("#form").hide();
+//	$("#poetry-canvas").css("display", "block");
+//	$("#new-canvas-button").css("display","block");
+//	$(".controls").css("display","block")
+//});
 
 //Color selection
 $(".controls").on("click", "li", function(){
@@ -62,6 +82,13 @@ $("#new-canvas-button").click(function(){
 		$("#input-text").val("");
 		$("#new-canvas-button").css("display","none");
 	});
+
+//Poetry
+$("input[type=radio]").click(function () {
+	$(".poem").hide();
+	var poemTitle = '#' + this.value;
+	$(poemTitle).show();
+});
 
 
 
