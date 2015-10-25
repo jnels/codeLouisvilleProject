@@ -62,19 +62,22 @@
 			<p id="drinking-hole" class="poem">
 			The baboons are grunting<br>
 			and barking like dogs</p>
-		</div>
+		
 
 			<!--Text input-->
 			<form id="poetry-input">
-				<textarea id="input-text" cols="50" wrap="hard">	</textarea>
+				<textarea id="input-text" cols="50" wrap="hard"></textarea>
 				<button id="submit-button" type="button">Submit</button>
+			</form>
 
 			<!--Clear and add new text-->
-				<button type=button id="new-canvas-button">New</button>
-				<button type=button id="save-canvas-button">Save</button>
-		</form>
+			<div id="canvas-buttons">
+				<button type=button id="new-canvas-button" class="poetry-button">New</button>
+				<button type=button id="save-canvas-button" class="poetry-button">Save</button>
+			</div>
+			
 				
-
+		</div>
 
 		<script src="http://code.jquery.com/jquery-1.11.0.min.js" type="text/javascript" charset="utf-8"></script>
 		<script src="js/fabric.js"></script>

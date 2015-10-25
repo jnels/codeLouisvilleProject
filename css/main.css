@@ -187,7 +187,6 @@ Home page
 	top: 0;
 	left: 40%;
 }
-	
 
 .home {
 	position: absolute;
@@ -298,17 +297,17 @@ input[type="radio"] {
 	margin-bottom: 15px;
 }
 
+/*
 #poetry-input {
 	margin: 2% auto;
 }
+*/
 	
-#input-text {
-	width: 320px;
-}
 	
 /* Canvas ******************/
 
-#canvas-container {
+#canvas-container
+{
 	position: relative;
 	margin: 0 auto;
 	width: 321px;
@@ -354,25 +353,37 @@ input[type="radio"] {
 	}
 	
 	/* Canvas Buttons *******************/
-	#submit-canvas {}
-	#new-canvas-button {
+	#canvas-buttons {
 		display: none;
 	}
 	
-	#save-canvas-button {
-		
-	}
+	
 
-/* Published Poetry Text *******************/
+/* Poetry Text *******************/
 
-.poem {
+.poem, 
+#input-text 
+{
 	position: absolute;
 	margin: 0 auto;
 	text-align: left;
 	font-size: 16px;
-	top: 45px;
 	left: 0;
+}
+
+.poem {
 	z-index: -1;
+	top: 45px;
+}
+
+#poetry-input {
+	display: none;
+}
+
+#input-text {
+	top: 0;
+	width: 320px;
+	min-height: 320px;
 }
 
 .poem-title {
@@ -403,9 +414,11 @@ input[type="radio"] {
 		max-width: 360px;
 	}
 	
-	#canvas-container {
-		
+/*
+	.controls {
+		display: none;
 	}
+*/
 	
 }
 /************************

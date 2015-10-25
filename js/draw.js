@@ -22,12 +22,14 @@ function displayPoem (userText) {
 	//Hide form, show "new" button
 	$("#form").hide();
 	$("#poetry-canvas").css("display", "block");
-	$("#new-canvas-button").css("display","block");
-	$(".controls").css("display","block")
+	$("#new-canvas-button").css("display", "block");
+	$("#save-canvas-button").css("display", "block");
+	$(".controls").css("display", "block");
 }
 
 //Allow user to add text to canvas
 $("#submit-button").click(function(){
+	$("#poetry-input").hide();
 	//Put value of textarea into paragraph
   $userText = $("#input-text").val();
 	displayPoem($userText)
@@ -54,9 +56,10 @@ $("#save-canvas-button").click(function(){
 //Clear fields to allow new text. Also clear canvas.
 $("#new-canvas-button").click(function(){
 		canvas.clear().renderAll();
-		$("#form").show();
+		$("#poetry-input").show();
 		$("#input-text").val("");
-		$("#new-canvas-button").css("display","none");
+		$("#new-canvas-button").hide();
+		$("#save-canvas-button").hide();
 	});
 
 
@@ -83,16 +86,20 @@ $("input[type=radio]").click(function () {
 	var poem = "#" + this.value;	
 	var title = "#" + this.value + "-title";
 	
+	//Clears textarea
+	$("#input-text").val("");
+	
 	$(this).siblings().removeClass("selected-title");
 	$(".poem").hide();
 	$(this).next().addClass("selected-title");
 	
 	if (poem === "#create") {
-		$("#poetry-input").css("display", "block");
+		$("#poetry-input").show(); //.css("display", "block");
+		//$("#submit-button").show();
+	} else {	
+		$(title).show();
+		$(poem).show();
 	}
-	
-	$(title).show();
-	$(poem).show();
 	canvas.clear().renderAll();
 });
 
