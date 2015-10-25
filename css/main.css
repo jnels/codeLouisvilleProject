@@ -1,10 +1,26 @@
-	* {
+/*
+Colors:
+Border: #908070
+
+*/
+
+
+* {
 	box-sizing: border-box;
 }
+
+/**************************************
+General
+**************************************/
 
 a {
 	text-decoration: none;
 	color: inherit;
+}
+
+a:hover {
+	text-shadow: -2px -2px #000;
+	color: transparent;
 }
 
 ul {
@@ -13,6 +29,11 @@ ul {
 
 .poem {
 	display: none;
+}
+
+.page-heading {
+	text-align: center;
+	font-size: 2.5em;
 }
 
 /**************************************
@@ -32,11 +53,11 @@ h3,
 h4,
 h5,
 .navigation,
-form label {
+legend
+{
 	font-family: "Amatic SC", Arial, serif;
 	font-weight: 700;
 }
-
 
 /*************************************
 General
@@ -167,19 +188,20 @@ Home page
 	left: 40%;
 }
 	
-	.home {
-		position: absolute;
-		color: black;
-		text-align: center;
-		line-height: 0.9;
-	}
-	
-	#home-name {
-		bottom: 5%;
-		left: 20%;
-		font-size: 3em;
-		line-height: .9em;
-	}
+
+.home {
+	position: absolute;
+	color: black;
+	text-align: center;
+	line-height: 0.9;
+}
+
+#home-name {
+	bottom: 5%;
+	left: 20%;		
+	font-size: 3em;
+	line-height: .9em;
+}
 	
 	#home-poet {
 		bottom: 35%;
@@ -238,33 +260,72 @@ Home page
 /************************
 Poetry
 *************************/
-	#poetry-input {
-		margin: 2% auto;
-	}
+#poetry-title-list {
+	box-shadow: 0px 2px 5px #908070;
+	border-radius: 20px;
+	background-color: rgba(144, 128, 112, .3);
+	padding: 0 5px 10px 15px;
+	margin: 0 auto;
+	max-width: 320px;
+}
+
+legend {
+	font-size: 1.875em;
+	margin: 0 auto 5px;
+}
+
+label,
+input[type="radio"] {
+	display: block;	
+}
+
+label {
+	margin-left: 20px;
+	padding: 3px 0;
+}
+
+input[type="radio"] {
+	float: left;
+	margin-top: 5px;
+}
+
+.selected-title {
+	font-size: 1.1em;
+	font-weight: 700;
+}
+
+#poetry-wrap {
+	margin-bottom: 15px;
+}
+
+#poetry-input {
+	margin: 2% auto;
+}
 	
-	#poetry-input textarea {
-		width: 320px;
-	}
+#input-text {
+	width: 320px;
+}
 	
-	/* Canvas ******************/
-	#canvas-container {
-		margin: 0 auto;
-		width: 321px;
-		text-align: center;
-		border: 1px solid grey;
-	}
+/* Canvas ******************/
+
+#canvas-container {
+	position: relative;
+	margin: 0 auto;
+	width: 321px;
+	text-align: center;
+	border: 1px solid grey;
+}
 	
 	/* Color Select *******************/
 	.controls {
-		display: none;
 		min-height: 60px;
 		margin: 0 auto;
-		/*	width: 600px;*/
 		border-radius: 5px;
+		width: 100%;
 		overflow: hidden;
 	}
 	
-	ul {
+	.controls ul {
 		list-style: none;
 		margin: 0;
 		float: left;
@@ -301,20 +362,55 @@ Poetry
 	#save-canvas-button {
 		
 	}
+
+/* Published Poetry Text *******************/
+
+.poem {
+	position: absolute;
+	margin: 0 auto;
+	text-align: left;
+	font-size: 16px;
+	top: 45px;
+	left: 0;
+	z-index: -1;
+}
+
+.poem-title {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	padding: 0 auto;
+	font-size: 30px;
+	text-align: center;
+	z-index: -1;
+}
+
+@media screen and (min-width: 730px) {
+	#poetry-wrap,
+	#canvas-container {
+		display: inline-block;
+		float: left;
+		height: 100%;
+	}
 	
+	#poetry-wrap {
+		margin-right: 2%;
+		width: 53%;
+	}
+	
+	#poetry-title-list {
+		max-width: 360px;
+	}
+	
+	#canvas-container {
+		
+	}
+	
+}
 /************************
 Web Developer
 *************************/
-	
-/*
-#projectWrap {
-	max-width: 940px;
-	margin: 0 auto;
-	padding: 0 5%;
-	clear: both;
-	background-color: red;
-*/
-}
 
 #web-projects {
 	margin: 0;
@@ -325,7 +421,7 @@ Web Developer
 	float: left;
 	width: 45%;
 	height: auto;
-	margin: 2.5%;
+	margin: 0 2.5% 5%;
   }
 
 img {
@@ -334,29 +430,32 @@ img {
 
 @media screen and (min-width: 960px) {
 	#web-projects {
-		margin: 0 10%;
+		margin: 0 10%; 
 	}
 	
 	#web-projects li {
-		width: 35%;
+		width: 30%;
+		margin: 0% 5% 5%;
 	}
 }
 	
 /************************
 Contact Form
 *************************/
-	form {
+	.contact form {
 		min-width: 250px;
 		max-width: 350px;
 		margin: 2% auto;
 		/*	align: center;*/
 	}
 	
+/*
 	form label {
 		font-size: 1.2em;
 	}
+*/
 	
-	form h1 {
+	.contact form h1 {
 		text-align: center;
 	}
 	
@@ -367,12 +466,13 @@ Contact Form
 		padding: 5px 3px 3px 5px;
 		font-size: 1em;
 	}
-	textarea {
+	.contact textarea {
 		resize: vertical;
 		min-height: 100px;
 		max-height: 200px;
 	}
-	fieldset {
+
+	.contact fieldset {
 		margin-bottom: 5px;
 		/*  background: forestgreen url("http://versporttvonline.com/wp-content/uploads/download-texture-background-green-hd-hd-wallpapers-20140823124408-53f88c9874a83.jpg");
 	background-size: cover;*/

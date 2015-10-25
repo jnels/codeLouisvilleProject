@@ -1,37 +1,30 @@
-//var canvas;
-//var printText;
 var $userText;
 var drawColor;
-
-console.log("attached");
 
 //Establish canvas
 var canvas = new fabric.Canvas("poetry-canvas", {
 		isDrawingMode: true,
-		height: 320,
+		height: 480,
 		width: 320
   });
 
-canvas.freeDrawingBrush.width = 10;
+canvas.freeDrawingBrush.width = 15;
 
 function displayPoem (userText) {
-	var printText = new fabric.Text(userText, { 
-				left: 10, 
+	var printText = new fabric.Text(userText, {  
 		top: 10,
-		fontSize: 18,
+		fontSize: 16,
 		fontFamily: "Merriweather"
 	});
 	
 	canvas.add(printText);
 	
-		//Hide form, show new button
+	//Hide form, show "new" button
 	$("#form").hide();
 	$("#poetry-canvas").css("display", "block");
 	$("#new-canvas-button").css("display","block");
 	$(".controls").css("display","block")
 }
-
-
 
 //Allow user to add text to canvas
 $("#submit-button").click(function(){
@@ -39,23 +32,6 @@ $("#submit-button").click(function(){
   $userText = $("#input-text").val();
 	displayPoem($userText)
 });
-	
-//	//Add to canvas
-//	printText = new fabric.Text($userText, { 
-//		left: 10, 
-//		top: 10,
-//		fontSize: 18,
-//		fontFamily: "Merriweather"
-//	});
-//	
-//	canvas.add(printText);
-	
-//	//Hide form, show new button
-//	$("#form").hide();
-//	$("#poetry-canvas").css("display", "block");
-//	$("#new-canvas-button").css("display","block");
-//	$(".controls").css("display","block")
-//});
 
 //Color selection
 $(".controls").on("click", "li", function(){
@@ -83,11 +59,41 @@ $("#new-canvas-button").click(function(){
 		$("#new-canvas-button").css("display","none");
 	});
 
+
 //Poetry
+$(document).ready(function() {
+	var poemId = [
+		"ashes-ashes",
+		"drinking-hole",
+		"body-washer"
+	];
+	
+	var randomNumber = Math.floor(Math.random() * poemId.length);
+	var showPoem = poemId[randomNumber];
+	var input = "input[value='" + showPoem + "']";
+	
+	$(input).attr("checked", "checked");
+	$(input).next().addClass("selected-title")
+	$("#" + showPoem).show();
+	$("#" + showPoem + "-title").show();
+});
+
+
 $("input[type=radio]").click(function () {
+	var poem = "#" + this.value;	
+	var title = "#" + this.value + "-title";
+	
+	$(this).siblings().removeClass("selected-title");
 	$(".poem").hide();
-	var poemTitle = '#' + this.value;
-	$(poemTitle).show();
+	$(this).next().addClass("selected-title");
+	
+	if (poem === "#create") {
+		$("#poetry-input").css("display", "block");
+	}
+	
+	$(title).show();
+	$(poem).show();
+	canvas.clear().renderAll();
 });
 
 

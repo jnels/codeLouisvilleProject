@@ -3,13 +3,12 @@
 	<title>Joel W Nelson | Poet | Web Developer</title>
 
 	<head>
-		<link rel="stylesheet" type="text/css" href="../css/normalize.css">
-		<link rel="stylesheet" type="text/css" href="../css/main.css">
+		<link rel="stylesheet" type="text/css" href="css/normalize.css">
+		<link rel="stylesheet" type="text/css" href="css/main.css">
 		<link href="https://fonts.googleapis.com/css?family=Amatic+SC:400,700|Merriweather:400,700,400italic" rel='stylesheet' type='text/css'>
 	</head>
 
 	<body>
-
 
 		<!--Header---------------------------->
 		<header>
@@ -22,59 +21,64 @@
 		</header>
 		
 		<!--Poem list ------------------------->
+		<h1 class="page-heading">Sample Poetry</h1>
 		<div id="poetry-wrap">
-			<form>
-				<input type="radio" name="poetry" value="ashes-ashes">Ashes, Ashes</input>
-				<br>
-				<input type="radio" name="poetry" value="drinking-hole">The Drinking Hole</input>
-				<br>
-				<input type="radio" name="poetry" value="body-washer">The Body Washer</input>
-				<br>
-				<input type="radio" name="poetry" value="create" id="create">Create your own blackout/erasure poetry</input>
+			
+			<form id="poetry-title-list">
+				<legend>Select:</legend>
+				<input type="radio" name="poetry" id="1" value="ashes-ashes">
+				<label for="1">Ashes, Ashes</label>
+				<input type="radio" name="poetry" id="2" value="drinking-hole">
+				<label for="2">The Drinking Hole</label>
+				<input type="radio" name="poetry" id="3" value="body-washer">
+				<label for="3">The Body Washer</label>
+				<input type="radio" name="poetry" id="4" value="create">
+				<label for="4">Create your own blackout/erasure poetry</label>
 			</form>
 		</div>
 
 		<!--Poetry canvas ------------------------->
 		<div id="canvas-container">
 			<canvas id="poetry-canvas"></canvas>
-						<!--Color controls-->
+			
+		<!--Color controls-->	
 			<div class="controls">
 				<ul>
 					<li class="black selected-color"></li>
 					<li class="white"></li>
 				</ul>
 			</div>
+			
+		<!--Poetry-->	
+			<h2 id="ashes-ashes-title" class="poem poem-title">Ashes, Ashes</h2>
+			<p id="ashes-ashes" class="poem">
+			It is not the pull of the moon<br>
+			or the spinning of the earth<br>
+			that drives the tide of sand<br>
+			to the sea. Desert begets desert<br>
+			a city falls into itself......</p>
+
+			<h2 id="drinking-hole-title" class="poem poem-title">The Drinking Hole</h2>
+			<p id="drinking-hole" class="poem">
+			The baboons are grunting<br>
+			and barking like dogs</p>
 		</div>
 
-		<!--Text input-->
-		<div>
-
+			<!--Text input-->
+			<form id="poetry-input">
+				<textarea id="input-text" cols="50" wrap="hard">	</textarea>
+				<button id="submit-button" type="button">Submit</button>
 
 			<!--Clear and add new text-->
-			<button type=button id="new-canvas-button">New</button>
-			<button type=button id="save-canvas-button">Save</button>
-
-
-
-			<form id="poetry-input">
-				<textarea id="input-text" cols="50" wrap="hard"></textarea>
-				<button id="submit-button" type="button">Submit</button>
-			</form>
-		</div>
+				<button type=button id="new-canvas-button">New</button>
+				<button type=button id="save-canvas-button">Save</button>
+		</form>
+				
 
 
 		<script src="http://code.jquery.com/jquery-1.11.0.min.js" type="text/javascript" charset="utf-8"></script>
-		<script src="../js/fabric.js"></script>
-		<script src="../js/draw.js"></script>
-
-<p id="ashes-ashes" class="poem">It is not the pull of the moon<br>
-or the spinning of the earth<br>
-that drives the tide of sand<br>
-to the sea. Desert begets desert<br>
-a city falls into itself</p>
-
-<p id="drinking-hole" class="poem">The baboons are grunting<br>
-and barking like dogs</p>
+		<script src="js/fabric.js"></script>
+		<script src="js/draw.js"></script>
 
 
 	</body>
