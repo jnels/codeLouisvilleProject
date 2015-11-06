@@ -1,0 +1,57 @@
+
+nav {
+	background: url("/img/Digital-vs.-Analog-free-license-CC0.jpg") no-repeat center center;
+	background-size: cover;
+	height: 20%;
+}
+
+#nav-name {
+	font-size: 2.5em;
+	width: 100%;
+	text-align: center;
+}
+
+#nav-list {
+	width: 100%;
+	margin: 0;
+}
+
+#nav-list li {
+	padding: 0;
+	font-size: 1em;
+	width: 32%;
+	text-align: center;
+}
+
+
+/*
+
+#nav-about {
+	margin-top: 3%;
+
+}
+
+#nav-poetry {
+	margin-top: 2%;
+}
+
+#nav-web {
+	margin-top: 4%;
+}
+*/
+
+#canvas-container {
+	width: 100%;
+}
+
+
+/*****************************
+	Poetry
+*****************************/
+.poem {
+	display: none;
+}
+
+#save-canvas-button {
+	display: none;
+}

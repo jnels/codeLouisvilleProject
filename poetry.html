@@ -4,85 +4,125 @@
 
 	<head>
 		<link rel="stylesheet" type="text/css" href="css/normalize.css">
-		<link rel="stylesheet" type="text/css" href="css/main.css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+		<link rel="stylesheet" type="text/css" href="css/style.css">
 		<link href="https://fonts.googleapis.com/css?family=Amatic+SC:400,700|Merriweather:400,700,400italic" rel='stylesheet' type='text/css'>
 	</head>
 
 	<body>
 
 		<!--Header---------------------------->
-		<header>
-			<div class="translucent-layer">
-				<h1 id="name"><a href=index.html>Joel W Nelson</a></h1>
-				<h2 id="about" class="nav"><a href=about.html>About</a></h2>
-				<h2 id="poetry" class="nav"><a href=poetry.html>Poetry</a></h2>
-				<h2 id="web" class="nav"><a href=web-developer.html>Web</a></h2>
-			</div> 
-		</header>
-		
+		<nav class="navbar navbar-default navbar-static-top" role="navigation">
+			<div class="container-fluid">
+				<a class="navbar-header navbar-left" id="nav-name" href=index.html>Joel W Nelson</a>
+
+				<ul class="navbar-nav navbar-right list-inline" id="nav-list">
+					<li id="nav-about"><a href=about.html>About</a></h2>
+					</li>
+					<li id="nav-poetry"><a href=poetry.html>Poetry</a></h2>
+					</li>
+					<li id="nav-web"><a href=web-developer.html>Web</a></h2>
+					</li>
+				</ul>
+			</div>
+
+		</nav>
+
 		<!--Poem list ------------------------->
-		<h1 class="page-heading">Sample Poetry</h1>
-		<div id="poetry-wrap">
-			
-			<form id="poetry-title-list">
-				<legend>Select:</legend>
-				<input type="radio" name="poetry" id="1" value="ashes-ashes">
-				<label for="1">Ashes, Ashes</label>
-				<input type="radio" name="poetry" id="2" value="drinking-hole">
-				<label for="2">The Drinking Hole</label>
-				<input type="radio" name="poetry" id="3" value="body-washer">
-				<label for="3">The Body Washer</label>
-				<input type="radio" name="poetry" id="4" value="create">
-				<label for="4">Create your own blackout/erasure poetry</label>
-			</form>
+		<h1 class="page-header text-center">Sample Poetry</h1>
+
+		<div class="col-sm-6">
+			<div id="poetry-wrap">
+				<form id="poetry-title-list">
+					<legend>Select:</legend>
+					<input type="radio" name="poetry" id="1" value="ashes-ashes">
+					<label for="1">Ashes, Ashes</label>
+					<input type="radio" name="poetry" id="2" value="drinking-hole">
+					<label for="2">The Drinking Hole</label>
+					<input type="radio" name="poetry" id="3" value="body-washer">
+					<label for="3">The Body Washer</label>
+				</form>
+			</div>
+
+			<button type="button" class="btn btn-default" id="create-new-poem" data-toggle="modal" data-target="#create-found-poem">Create your own blackout/erasure poetry</button>
+
+			<button type="button" class="btn btn-default" id="save-canvas-button" data-toggle="modal" data-target="#save-canvas">Save or Print</button>
+
 		</div>
 
 		<!--Poetry canvas ------------------------->
-		<div id="canvas-container">
-			<canvas id="poetry-canvas"></canvas>
-			
-		<!--Color controls-->	
-			<div class="controls">
-				<ul>
-					<li class="black selected-color"></li>
-					<li class="white"></li>
-				</ul>
+
+		<div class="col-sm-6">
+			<div id="canvas-container">
+				<canvas id="poetry-canvas"></canvas>
+
+				<!--Color controls-->
+				<div class="controls">
+					<ul>
+						<li class="black selected-color"></li>
+						<li class="white"></li>
+					</ul>
+				</div>
+
+
+				<!-- Poetry----------------------->
+				<h2 id="ashes-ashes-title" class="poem poem-title">Ashes, Ashes</h2>
+				<p id="ashes-ashes" class="poem">
+					It is not the pull of the moon
+					<br> or the spinning of the earth
+					<br> that drives the tide of sand
+					<br> to the sea. Desert begets desert
+					<br> a city falls into itself......</p>
+
+				<h2 id="drinking-hole-title" class="poem poem-title">The Drinking Hole</h2>
+				<p id="drinking-hole" class="poem">
+					The baboons are grunting
+					<br> and barking like dogs</p>
+
+
+
+
+				<!--Text input-->
+
+
+				<!--Clear and add new text-->
+				<!--
+				<div id="canvas-buttons">
+					<button type=button id="new-canvas-button" class="poetry-button">New</button>
+					<button type=button id="save-canvas-button" class="poetry-button">Save</button>
+				</div>
+-->
+
 			</div>
-			
-		<!--Poetry-->	
-			<h2 id="ashes-ashes-title" class="poem poem-title">Ashes, Ashes</h2>
-			<p id="ashes-ashes" class="poem">
-			It is not the pull of the moon<br>
-			or the spinning of the earth<br>
-			that drives the tide of sand<br>
-			to the sea. Desert begets desert<br>
-			a city falls into itself......</p>
-
-			<h2 id="drinking-hole-title" class="poem poem-title">The Drinking Hole</h2>
-			<p id="drinking-hole" class="poem">
-			The baboons are grunting<br>
-			and barking like dogs</p>
-		
-
-			<!--Text input-->
-			<form id="poetry-input">
-				<textarea id="input-text" cols="50" wrap="hard"></textarea>
-				<button id="submit-button" type="button">Submit</button>
-			</form>
-
-			<!--Clear and add new text-->
-			<div id="canvas-buttons">
-				<button type=button id="new-canvas-button" class="poetry-button">New</button>
-				<button type=button id="save-canvas-button" class="poetry-button">Save</button>
-			</div>
-			
-				
 		</div>
 
-		<script src="http://code.jquery.com/jquery-1.11.0.min.js" type="text/javascript" charset="utf-8"></script>
+		<!--		Found Poem Modal-->
+		<div class="modal modal-lg fade" id="create-found-poem" aria-labelledby="Close" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						<h4 class="modal-title">Type text to create found poem</h4>
+					</div>
+					<div class="modal-body">
+						<form id="poetry-input">
+							<textarea id="input-text" cols="15" wrap="hard"></textarea>
+						</form>
+					</div>
+					<div class="modal-footer">
+						<button class="btn-primary" id="submit-button" type="button" data-dismiss="modal">Submit</button>
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
 		<script src="js/fabric.js"></script>
 		<script src="js/draw.js"></script>
-
 
 	</body>
 
