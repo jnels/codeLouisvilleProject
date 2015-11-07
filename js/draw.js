@@ -5,76 +5,41 @@ var drawColor;
 var canvas = new fabric.Canvas("poetry-canvas", {
 		isDrawingMode: true,
 		height: 480,
-		width: 320
+		width: 340
   });
 
 canvas.freeDrawingBrush.width = 15;
 
-function displayPoem (userText, topPosition) {
-	var printText = new fabric.Text(userText, {  
-		top: 15,
-		left: 15,
-		fontSize: 18,
-		fontFamily: "Merriweather"
+function displayPoem(userText, topPosition) {
+	var printText = new fabric.Textbox(userText, {  
+		width: 320,
+		height: 460,
+		top: 10,
+		left: 10,
+		fontFamily: "Merriweather",
+		fontSize: 16,
+		textAlign: "left"
 	});
 	
 	canvas.add(printText);
 	
 	//Hide form, show "new" button
-	$(".poem").hide();
-	$(".controls").show();
+//	$(".poem").hide();
+//	$(".controls").show();
 		//.css("display", "block");
 }
 
 //Allow user to add text to canvas
 $("#submit-button").click(function(){
+	canvas.clear().renderAll();
 	$("#create-new-poem").html("Create new found poem");
 	$("#save-canvas-button").show();
 	$("input").removeAttr("checked");
 	//Put value of textarea into canvas
   $userText = $("#input-text").val();
 	$("#input-text").val("");
-//	countCharacters($userText);
-	displayPoem($userText)
+	displayPoem($userText, 30)
 });
-
-
-	var joinedArray = [];
-	var textArray = [];
-
-//Experimental
-function countCharacters(val) {
-//	textArray = [];
-	var length = $userText.length;
-	var charBreak = 15;
-	var j = 0;
-
-	
-	for (i = 0; i < length; i++) {
-		var next = i + 1;
-		var character = $userText.substring(i, next);
-		textArray.push(character);
-	}
-	
-	for (i = 0; i < textArray.length; i++) {
-		var newLineArray = [];
-		if (textArray[i] === " " && j < 5) {
-			j += 1;
-		} else if (textArray[i] === " " && j >= 5) {
-			newLineArray.push(textArray[i]);
-			joinedArray = newLineArray.join();
-			j = 0;
-			displayPoem(joinedArray, 15);
-			
-		} else {
-			j += 1;
-			console.log(j);
-		}
-	}
-	
-	//console.log("final " + textArray);
-	//displayPoem(joinedArray)
-}
 
 
 //Color selection
@@ -94,16 +59,6 @@ $("#save-canvas-button").click(function(){
     // to PNG
     window.open(canvas.toDataURL('png'));
 });
-
-//Clear fields to allow new text. Also clear canvas.
-//$("#new-canvas-button").click(function(){
-//		canvas.clear().renderAll();
-//		$("#poetry-input").show();
-//		$("#input-text").val("");
-//		$("#new-canvas-button").hide();
-//		$("#save-canvas-button").hide();
-//	});
-
 
 //Poetry
 $(document).ready(function() {

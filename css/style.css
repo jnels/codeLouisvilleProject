@@ -1,4 +1,60 @@
+* {
+	box-sizing: border-box;
+}
 
+/**************************************
+General
+**************************************/
+
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+a:hover {
+	text-shadow: -2px -2px #000;
+	color: transparent;
+}
+
+ul {
+	list-style: none;
+}
+
+.poem {
+	display: none;
+}
+
+.page-heading {
+	text-align: center;
+	font-size: 2.5em;
+}
+
+/**************************************
+Fonts
+**************************************/
+
+body,
+textarea,
+input {
+	font-family: "Merriweather", Arial, serif;
+	font-weight: 400;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+.navigation,
+legend
+{
+	font-family: "Amatic SC", Arial, serif;
+	font-weight: 700;
+}
+
+
+
+/* NAV */
 nav {
 	background: url("/img/Digital-vs.-Analog-free-license-CC0.jpg") no-repeat center center;
 	background-size: cover;
@@ -40,11 +96,6 @@ nav {
 }
 */
 
-#canvas-container {
-	width: 100%;
-}
-
-
 /*****************************
 	Poetry
 *****************************/
@@ -52,6 +103,86 @@ nav {
 	display: none;
 }
 
+#canvas-container {
+	position: relative;
+	width: 340px;
+	border: 2px solid #908070;
+	box-shadow: 0px 2px 2px #908070;
+	border-radius: 8px;
+}
+
 #save-canvas-button {
 	display: none;
 }
+
+#poetry-input {
+	display: block;
+	text-align: center;
+}
+
+	/* Poetry Text *******************/
+
+
+	#input-text {
+		top: 0;
+		width: 320px;
+		min-height: 320px;
+	}
+
+	.poem {
+		position: absolute;
+		margin: 0 auto;
+		text-align: left;
+		font-size: 16px;
+		top: 45px;
+		left: 10px;
+		z-index: -1;
+	}
+
+	.poem-title {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		padding: 0 auto;
+		font-size: 30px;
+		text-align: center;
+		z-index: -1;
+	}
+
+	/* Color Select *******************/
+	.controls {
+		min-height: 60px;
+		margin: 0 auto;
+		border-radius: 5px;
+		width: 100%;
+		overflow: hidden;
+	}
+	
+	.controls ul {
+		list-style: none;
+		margin: 0;
+		float: left;
+		padding: 10px 0 20px;
+		width: 100%;
+		text-align: center;
+	}
+	
+	.controls ul li {
+		display: inline-block;
+		margin: 0 5px 10px;
+		height: 54px;
+		width: 54px;
+		border-radius: 60px;
+		cursor: pointer;
+		border: 1px solid black;
+		box-shadow: 0 3px 0 0 #222;
+	}
+	
+	.black {
+		background: #000;
+	}
+	
+	.white {
+		background: #fff;
+	}
