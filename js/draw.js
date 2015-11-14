@@ -5,7 +5,7 @@ var drawColor;
 var canvas = new fabric.Canvas("poetry-canvas", {
 		isDrawingMode: true,
 		height: 480,
-		width: 356
+		width: 360
   });
 
 canvas.freeDrawingBrush.width = 15;

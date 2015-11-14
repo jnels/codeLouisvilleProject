@@ -3,22 +3,58 @@
 	<title>Joel W Nelson | Web Developer | Poet</title>
 
 	<head>
-		<link rel="stylesheet" type="text/css" href="../css/normalize.css">
-		<link rel="stylesheet" type="text/css" href="css/main.css">
+		<link rel="stylesheet" type="text/css" href="css/normalize.css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+		<link rel="stylesheet" type="text/css" href="css/style.css">
 		<link href="https://fonts.googleapis.com/css?family=Amatic+SC:400,700|Merriweather:400,700,400italic" rel='stylesheet' type='text/css'>
 	</head>
 
 	<body>
 
 		<!--Header---------------------------->
-		<header>
+	<div class="container-fluid" id="custom-header">
+		<div class="row">
 			<div class="translucent-layer">
-				<h1 id="name"><a href="index.html">Joel W Nelson</a></h1>
-				<h2 id="about" class="nav"><a href=about.html>About</a></h2>
-				<h2 id="poetry" class="nav"><a href=poetry.html>Poetry</a></h2>
-				<h2 id="web" class="nav"><a href=web-developer.html>Web</a></h2>
-			</div> 
-		</header>
+				<div class="col-xs-12 col-sm-6 header">
+					<h1 id="nav-name"><a href=index.html>Joel W Nelson</a></h1>
+				</div>
+
+				<ul id="nav-list">
+					<div class="col-xs-4 col-sm-2 header">
+						<li>
+							<h2 id="nav-about" class="nav-link"><a href=about.html>About</a></h2>
+						</li>
+					</div>
+					<div class="col-xs-4 col-sm-2 header">
+						<li>
+							<h2 id="nav-poetry" class="nav-link"><a href=poetry.html>Poetry</a></h2>
+						</li>
+					</div>
+					<div class="col-xs-4 col-sm-2 header">
+						<li>
+							<h2 id="nav-web" class="nav-link"><a href=web-developer.html>Web</a></h2>
+						</li>
+					</div>
+				</ul>
+			</div>
+		</div>
+	</div>
+		
+	<div class="container">
+		<h1 class="page-header text-center">About Me</h1>
+		
+	
+		<div class="row contact-links">
+			<div col-xs-12>
+				<a class="fa fa-twitter-square fa-2x" target="_blank" href="https://twitter.com/JoelWNelson"></a>
+				<a class="fa fa-github-square fa-2x" target="_blank" href="https://github.com/jnels"></a>
+				<a class="fa fa-linkedin-square fa-2x" target="_blank" href="https://www.linkedin.com/in/joelwnelson"></a>
+				<a class="fa fa-envelope-square fa-2x" target="_blank"></a>
+			</div>
+		</div>	
+		
+	</div>
 
 	</body>
 

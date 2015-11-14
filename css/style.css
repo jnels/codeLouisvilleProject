@@ -27,7 +27,7 @@ ul {
 }
 
 #home-page,
-header {
+#custom-header {
 	background: url("../img/Digital-vs.-Analog-free-license-CC0.jpg") no-repeat center center;
 	background-size: cover;
 }
@@ -41,16 +41,20 @@ header {
 	background-color: rgba(255, 255, 255, 0.45);
 }
 
+.contact-links {
+	margin-top: 30px;
+	text-align: center;
+}
+
 
 /**************************************
 Fonts
 **************************************/
 
-body,
-textarea,
-input {
+body {
 	font-family: "Merriweather", Arial, serif;
 	font-weight: 400;
+	color: #232323;
 }
 
 h1,
@@ -59,8 +63,7 @@ h3,
 h4,
 h5,
 .navigation,
-legend
-{
+legend {
 	font-family: "Amatic SC", Arial, serif;
 	font-weight: 700;
 }
@@ -70,10 +73,11 @@ legend
 Nav
 **************************************/
 
-header {
+#custom-header {
 	position: relative;
-	min-height: 100px;
+	height: 85px;
 	box-shadow: 0px 2px 5px #908070;
+	width: 100%;
 }
 
 .col-xs-12.header {
@@ -81,52 +85,60 @@ header {
 }
 
 .col-xs-4.header {
-	top: -25px;
+	top: -35px;
 	left: -25px;
 }
-
 
 #nav-name {
 	text-align: center;
 	font-size: 2.5em;
 }
 
-
-#nav-list li {
-	width: 100%;
+.nav-link {
+	padding: 0 10px;
+	font-size: 1.8em;
 	text-align: center;
 }
 
-h2 a {
-	font-size: 2.5rem;
+@media screen and (min-width: 768px) {
+	#custom-header {
+		height: 100px;
+	}
+	#nav-name {
+		font-size: 4em;
+		text-align: left;
+		margin-left: 8%;
+		margin-top: 28px;
+	}
+	.nav-link {
+		text-align: center;
+	}
+	#nav-about {
+		margin-top: 75px;
+		font-size: 2.3em;
+	}
+	#nav-poetry {
+		margin-top: 45px;
+		font-size: 2.3em;
+	}
+	#nav-web {
+		margin-top: 65px;
+		font-size: 2.3em;
+	}
 }
 
-/*
-
-#nav-about {
-	margin-top: 3%;
-
-}
-
-#nav-poetry {
-	margin-top: 2%;
-}
-
-#nav-web {
-	margin-top: 4%;
-}
-*/
 
 /**************************************
 Home page
 **************************************/
+
 #home-page {
-	height: 100%;		
+	position: absolute;
+	height: 100%;
 	width: 100%;
 	margin: 0;
 	padding: 0;
 }
-
 
 .home {
 	color: black;
@@ -166,27 +178,23 @@ Home page
 	font-size: 2em;
 }
 
+
 /* Home Page Responsive ***********/
 
 @media screen and (min-width: 480px) {
-	
 	#home-blank {
 		height: 25%;
 	}
-	
 	#home-name h1 {
 		font-size: 5.5em;
 	}
-	
 	#home-poet h2 {
 		font-size: 4em;
 	}
-	
 	#home-web h2 {
 		font-size: 3em;
 	}
 }
-
 
 
 /*****************************
@@ -209,6 +217,11 @@ Home page
 	display: none;
 }
 
+.canvas-buttons {
+	text-align: center;
+	margin-right: 10px;
+}
+
 #poetry-wrap {
 	box-shadow: 2px 2px 5px #908070;
 	border-radius: 20px;
@@ -229,7 +242,7 @@ legend {
 
 label,
 input[type="radio"] {
-	display: block;	
+	display: block;
 }
 
 .radio label {
@@ -238,84 +251,85 @@ input[type="radio"] {
 
 .selected-title {
 	font-size: 1.2em;
-	font-weight: 700;
+	color: #000;
 }
 
 #poetry-wrap {
 	margin-bottom: 15px;
-}	
+}
 
 
-		/* Poetry Modal *******************/
+/* Poetry Modal *******************/
 
-		#poetry-input {
-			display: block;
-			text-align: center;
-		}
-
-
-		/* Poetry Text *******************/
+#poetry-input {
+	display: block;
+	text-align: center;
+}
 
 
-		#input-text {
-			top: 0;
-			width: 320px;
-			min-height: 320px;
-		}
+/* Poetry Text *******************/
 
-		.poem {
-			position: absolute;
-			top: 45px;
-			text-align: left;
-			font-size: 16px;
-			padding-left: 10px;
-    	margin-top: 10px;
-			z-index: -1;
-		}
+#input-text {
+	top: 0;
+	width: 320px;
+	min-height: 320px;
+}
 
-		.poem-title {
-			position: absolute;
-			top: 0;
-			left: 0;
-			width: 100%;
-			font-size: 30px;
-			text-align: center;
-			z-index: -1;
-		}
+.poem {
+	position: absolute;
+	top: 45px;
+	text-align: left;
+	font-size: 16px;
+	padding-left: 10px;
+	margin-top: 10px;
+	z-index: -1;
+}
 
-		/* Color Select *******************/
-		.controls {
-			min-height: 60px;
-			margin: 0 auto;
-			border-radius: 5px;
-			width: 100%;
-			overflow: hidden;
-		}
+.poem-title {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	font-size: 30px;
+	text-align: center;
+	z-index: -1;
+}
 
-		.controls ul {
-			list-style: none;
-			margin: 0;
-			float: left;
-			padding: 10px 0 20px;
-			width: 100%;
-			text-align: center;
-		}
 
-		.controls ul li {
-			display: inline-block;
-			margin: 0 5px 10px;
-			height: 54px;
-			width: 54px;
-			border-radius: 60px;
-			cursor: pointer;
-			border: 1px solid black;
-			box-shadow: 0 3px 0 0 #222;
-		}
+/* Color Select *******************/
 
-		.black {
-			background: #000;
-		}
+.controls {
+	min-height: 60px;
+	margin: 0 auto;
+	border-radius: 5px;
+	width: 100%;
+	overflow: hidden;
+}
 
-		.white {
-			background: #fff;
-		}
+.controls ul {
+	list-style: none;
+	margin: 0;
+	float: left;
+	padding: 10px 0 20px;
+	width: 100%;
+	text-align: center;
+}
+
+.controls ul li {
+	display: inline-block;
+	margin: 0 5px 10px;
+	height: 54px;
+	width: 54px;
+	border-radius: 60px;
+	cursor: pointer;
+	border: 1px solid black;
+	box-shadow: 0 3px 0 0 #222;
+}
+
+.black {
+	background: #000;
+}
+
+.white {
+	background: #fff;
+}

@@ -1,0 +1,181 @@
+<DOCTYPE! html>
+	<hmtl>
+		<title>Joel W Nelson | Web Developer | Poet</title>
+
+		<head>
+			<link href='http://fonts.googleapis.com/css?family=Nunito:400,300' rel='stylesheet' type='text/css'>
+			<style>
+				body, 
+				button {
+					font-family: 'Nunito', sans-serif;
+					font-weight: bold;
+					background-color: #fff;
+					font-size: 16px;
+					color: #241404;
+				}
+				
+				h3 {
+					width: 120px;
+				}
+				
+				a {
+					font-size: 14px;
+					text-decoration: none;
+					color: inherit;
+				}
+				
+				h1 {
+					text-align: center;
+					color: #241404;
+					margin-bottom: 10px;
+				}
+				
+				form {
+					width: 300px;
+					margin: 10px auto;
+					align: center;
+				}
+				
+				input,
+				input[disabled],
+				select {
+					width: 100%;
+					border-radius: 8px;
+					padding: 2px 5px;
+					background-color: white;
+					font-family: 'Nunito', sans-serif;
+					font-size: 16px;
+					color: #241404;
+				}
+				
+				label {
+					font-size: 18px;
+					text-shadow: 0px 1px 2px rgba(255, 255, 255, 0.55);
+				}
+				
+				fieldset {
+					margin-bottom: 5px;
+					background: forestgreen url("../img/green-texture.jpg");
+					background-size: cover;
+					border-radius: 8px;
+				}
+				
+				.form-heading {
+					padding: 2px 12px;
+					color: white;
+					background: #241404;
+					border-radius: 50px;
+					border: solid forestgreen 2px;
+				}
+				
+				button {
+					width: 100%;
+					padding: 5px 0;
+					margin-top: 8px;
+					border-radius: 8px;
+					background-color: rgba(210, 255, 139, 0.5);
+				}
+			</style>
+
+		</head>
+
+		<body>
+			<h3 class="form-heading"><a href="../web-developer.html"><< Joel W Nelson</h3></a>
+			<div id="container">
+				<h1>Coffee Calculator</h1>
+
+				<form>
+					<fieldset>
+						<legend class="form-heading">Parameters</legend>
+						<label for="serving-size">Serving Size:</label>
+						<select id="serving-size">
+							<option selected="true" disabled>Select</option>
+							<option value="6">1 c (std coffee machine)</option>
+							<option value="8">8 fl oz</option>
+							<option value="10">10 fl oz</option>
+							<option value="12">12 fl oz</option>
+							<option value="16">16 fl oz</option>
+							<option value="20">20 fl oz</option>
+						</select>
+						<br>
+
+						<label for="number-of-servings">Servings:</label>
+						<input type="number" value="1" min="1" id="number-of-servings"></input>
+						<br>
+
+						<label for="coffee-measure">Coffee Measure:</label>
+						<select id="coffee-measure">
+							<option value="g">g</option>
+							<option value="T">T</option>
+							<option value="scoops">Coffee Scoop</option>
+						</select>
+
+					</fieldset>
+
+					<fieldset>
+						<legend class="form-heading">Result</legend>
+						<label for="coffee-output">Coffee:</label>
+							<input type="text" id="coffee-output" disabled></input>
+						<label for="water-output">Water:</label>
+								<input type="text" id="water-output" disabled></input>
+					</fieldset>
+
+					<button type="button" onClick="calculate()" )>Calculate</button>
+
+				</form>
+
+
+
+			</div>
+
+		</body>
+
+		<script>
+			function print(calculation, unit, waterWeight, totalVolume) {
+				var roundOutput = Math.round(calculation * 100) / 100;
+				var coffeeResult = roundOutput + unit;
+				var waterResult = waterWeight + "g (" + totalVolume + " fl oz)";
+				document.getElementById("coffee-output").value = coffeeResult;
+				document.getElementById("water-output").value = waterResult;
+			}
+
+			function calculate() {
+				var servingSize = document.getElementById("serving-size").value;
+				var numberOfServings = document.getElementById("number-of-servings").value;
+				var coffeeMeasure = document.getElementById("coffee-measure").value;
+				var unit;
+				var totalVolume;
+				var gramRatio = 1.6;
+				var waterWeight;
+				var calculation;
+
+				if (servingSize == "Select" || numberOfServings < 1) {
+					alert("Error! Please check your values.");
+				} else {
+					totalVolume = servingSize * numberOfServings;
+
+					if (coffeeMeasure === "g") {
+						calculation = totalVolume * gramRatio;
+						unit = "g";
+					} else {
+						var volumeRatio = totalVolume / 3;
+						calculation = (Math.round(volumeRatio * 2) / 2).toFixed(1);
+						if (coffeeMeasure === "T") {
+							unit = "T";
+						} else if (coffeeMeasure === "scoops") {
+							calculation = calculation / 2;
+							unit = " scoop";
+
+							if (calculation > 1) {
+								unit += "s";
+							}
+						}
+					}
+
+					waterWeight = totalVolume * 29.5;
+					print(calculation, unit, waterWeight, totalVolume);
+				}
+			}
+		</script>
+
+	</hmtl>

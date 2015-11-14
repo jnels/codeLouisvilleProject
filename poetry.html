@@ -1,54 +1,54 @@
-<DOCTYPE! html>
-	<html>
-	<title>Joel W Nelson | Poet | Web Developer</title>
+<!DOCTYPE html>
+<html>
+<title>Joel W Nelson | Poet | Web Developer</title>
 
-	<head>
-		<link rel="stylesheet" type="text/css" href="css/normalize.css">
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
-		<link rel="stylesheet" type="text/css" href="css/style.css">
-		<link href="https://fonts.googleapis.com/css?family=Amatic+SC:400,700|Merriweather:400,700,400italic" rel='stylesheet' type='text/css'>
-	</head>
+<head>
+	<link rel="stylesheet" type="text/css" href="css/normalize.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link href="https://fonts.googleapis.com/css?family=Amatic+SC:400,700|Merriweather:400,700,400italic" rel='stylesheet' type='text/css'>
+</head>
 
-	<body>
+<body>
 
-		<!--Header---------------------------->
-
-		<header>
-			<div class="container-fluid">
-				<div class="translucent-layer">
-					<div class=row>
-						<div class="col-xs-12 col-sm-6 header">
-							<h1 id="nav-name"><a href=index.html>Joel W Nelson</a></h1>
-						</div>
-
-						<ul id="nav-list">
-							<div class="col-xs-4 col-sm-2 header">
-								<li id="nav-about">
-									<h2><a href=about.html>About</a></h2>
-								</li>
-							</div>
-							<div class="col-xs-4 col-sm-2 header">
-								<li id="nav-poetry">
-									<h2><a href=poetry.html>Poetry</a></h2>
-								</li>
-							</div>
-							<div class="col-xs-4 col-sm-2 header">
-								<li id="nav-web">
-									<h2><a href=web-developer.html>Web</a></h2>
-								</li>
-							</div>
-						</ul>
-					</div>
-				</div>
-		</header>
-
-		<!--Poem list ------------------------->
+	<!--Header---------------------------->
+	<div class="container-fluid" id="custom-header">
 		<div class="row">
-			<h1 class="text-center">Sample Poetry</h1>
+			<div class="translucent-layer">
+				<div class="col-xs-12 col-sm-6 header">
+					<h1 id="nav-name"><a href=index.html>Joel W Nelson</a></h1>
+				</div>
+
+				<ul id="nav-list">
+					<div class="col-xs-4 col-sm-2 header">
+						<li>
+							<h2 id="nav-about" class="nav-link"><a href=about.html>About</a></h2>
+						</li>
+					</div>
+					<div class="col-xs-4 col-sm-2 header">
+						<li>
+							<h2 id="nav-poetry" class="nav-link"><a href=poetry.html>Poetry</a></h2>
+						</li>
+					</div>
+					<div class="col-xs-4 col-sm-2 header">
+						<li>
+							<h2 id="nav-web" class="nav-link"><a href=web-developer.html>Web</a></h2>
+						</li>
+					</div>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	<!--Poem list ------------------------->
+	<div class="container">
+		<div class="row">
+			<h1 class="page-header text-center">Sample Poetry</h1>
 		</div>
 
 		<div class="row">
-			<div class="col-sm-6">
+			<div class="col-sm-6 col-lg-5 col-lg-offset-1">
 				<div id="poetry-wrap">
 					<form id="poetry-title-list">
 						<legend class="text-center">Select:</legend>
@@ -61,18 +61,18 @@
 							<label for="3">The Body Washer</label>
 						</div>
 					</form>
+					<div class="canvas-buttons">
+						<button type="button" class="btn btn-success" id="create-new-poem" data-toggle="modal" data-target="#create-found-poem">Create your own blackout/erasure poetry</button>
 
-					<button type="button" class="btn btn-success" id="create-new-poem" data-toggle="modal" data-target="#create-found-poem">Create your own blackout/erasure poetry</button>
-
-					<button type="button" class="btn btn-default" id="save-canvas-button" data-toggle="modal" data-target="#save-canvas">Save or Print</button>
-
+						<button type="button" class="btn btn-default" id="save-canvas-button" data-toggle="modal" data-target="#save-canvas">Save or Print</button>
+					</div>
 				</div>
 			</div>
 
 
 			<!--Poetry canvas ------------------------->
 
-			<div class="col-sm-6">
+			<div class="col-sm-6 col-lg-5">
 				<div id="canvas-container">
 					<canvas id="poetry-canvas"></canvas>
 
@@ -124,12 +124,24 @@
 			</div>
 		</div>
 
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
-		<script src="js/fabric.js"></script>
-		<script src="js/draw.js"></script>
-
-	</body>
 
 
-	</html>
+	<div class="row contact-links">
+		<div col-xs-12>
+			<a class="fa fa-twitter-square fa-2x" target="_blank" href="https://twitter.com/JoelWNelson"></a>
+			<a class="fa fa-github-square fa-2x" target="_blank" href="https://twitter.com/JoelWNelson"></a>
+			<a class="fa fa-linkedin-square fa-2x" target="_blank" href="https://twitter.com/JoelWNelson"></a>
+			<a class="fa fa-envelope-square fa-2x" target="_blank"></a>
+		</div>
+	</div>
+	
+		</div>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
+	<script src="js/fabric.js"></script>
+	<script src="js/draw.js"></script>
+
+</body>
+
+
+</html>
