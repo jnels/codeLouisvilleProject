@@ -41,9 +41,35 @@ ul {
 	background-color: rgba(255, 255, 255, 0.45);
 }
 
+.color-wrap {
+	box-shadow: 2px 2px 5px #908070;
+	border-radius: 20px;
+	background-color: rgba(144, 128, 112, .3);
+	margin: 0 auto 15px;
+	padding: 10px 20px;
+}
+
+.color-wrap h2 {
+	margin-top: 0;
+	border-bottom: 1px solid #eee;
+}
+
+.white-wrap {
+	margin: 0 auto;
+	width: 360px;
+	border: 1px solid rgba(144, 128, 112, .3);
+	box-shadow: 2px 2px 5px #908070;
+	border-radius: 8px;
+}
+
+
 .contact-links {
 	margin-top: 30px;
 	text-align: center;
+}
+
+.copyright {
+	margin-top: 5px;
 }
 
 
@@ -196,6 +222,28 @@ Home page
 	}
 }
 
+/**************************************
+About
+**************************************/
+
+.color-wrap h4 {
+	font-size: 1.4em;
+	margin-bottom: 2px;
+}
+
+#profilePic {
+	width: 40%;
+	max-width: 200px;
+	min-width: 150px;
+	margin: 0 10px 5px 0;
+}
+
+@media screen and (max-width: 320px) {
+	#profilePic {
+		width: 100%;
+	}
+	
+}
 
 /*****************************
 	Poetry
@@ -205,6 +253,7 @@ Home page
 	display: none;
 }
 
+/*
 #canvas-container {
 	margin: 0 auto;
 	width: 360px;
@@ -212,6 +261,7 @@ Home page
 	box-shadow: 2px 2px 5px #908070;
 	border-radius: 8px;
 }
+*/
 
 #save-canvas-button {
 	display: none;
@@ -227,12 +277,11 @@ Home page
 	border-radius: 20px;
 	background-color: rgba(144, 128, 112, .3);
 	padding: 0 5px 10px 15px;
-	margin: 0 auto;
 	width: 360px;
 }
 
 #poetry-title-list {
-	margin: 20px;
+	margin: 0 20px;
 }
 
 legend {
@@ -259,7 +308,7 @@ input[type="radio"] {
 }
 
 
-/* Poetry Modal *******************/
+/* Poetry Modal ******************
 
 #poetry-input {
 	display: block;
