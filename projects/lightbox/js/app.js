@@ -3,11 +3,11 @@ var $overlay = $("#overlay");
 var $overlayContent = $("#overlayContent");
 var $image = $("<img>");
 var $caption = $("<p></p>");
-//var i = 0;
-var imageLocation;
-var nextImage;
+
 var picList = [];
 var picIndex;
+var imageLocation;
+var captionLocation;
 
 //Add image to overlay
 $overlayContent.append($image);
@@ -15,21 +15,19 @@ $overlayContent.append($image);
 //Add caption to overlay
 $overlayContent.append($caption);
 
-//Loads image src into array
+//Loads image and caption into array
 $("li img").each(function(i) {
-//	var position = $(this).attr("href");
-	var position = $(this).attr("src");
-	picList.push(position);
+	var source = $(this).attr("src");
+	var caption = $(this).attr("alt");
+	picList.push({
+		source: source, 
+		caption: caption});
 });
 
 //Capture click event on link to image
 $('#imageGallery a').click(function(event){
-		
-  event.preventDefault();
 	
-	//Get child's alt attribute and set caption
-  var captionText = $(this).children("img").attr("alt");
-  $caption.text(captionText);
+  event.preventDefault();
 	
 	//Show overlay
   $overlay.show();
@@ -39,15 +37,18 @@ $('#imageGallery a').click(function(event){
 	
 	//Loop to find value in picList array
 	for (var i = 0; i < picList.length; i++) {
-		if (picList[i] === imageLocation) {
+		if (picList[i].source === imageLocation) {
 			picIndex = i;
-			displayImage(imageLocation);
+			captionLocation = picList[i].caption;
+			displayImage(imageLocation, captionLocation);
 		} 
 	}
 });  
 
-function displayImage(location) {
+function displayImage(location, caption) {
+	console.log(location + " " + caption);
 	$image.attr("src", location);
+	$caption.text(caption);
 }
 
 $("#next").click(function() {
@@ -57,8 +58,11 @@ $("#next").click(function() {
 		picIndex++
 	}
 	
-	imageLocation = picList[picIndex];
-	displayImage(imageLocation);
+	
+	
+	imageLocation = picList[picIndex].source;
+	captionLocation = picList[picIndex].caption;
+	displayImage(imageLocation, captionLocation);
 });
 
 $("#previous").click(function() {
@@ -68,8 +72,9 @@ $("#previous").click(function() {
 		picIndex--
 	}
 	
-	imageLocation = picList[picIndex];
-	displayImage(imageLocation);
+	imageLocation = picList[picIndex].source;
+	captionLocation = picList[picIndex].caption;
+	displayImage(imageLocation, captionLocation)
 });
 
 $(".close-overlay").click(function(){
