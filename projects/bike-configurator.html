@@ -2,10 +2,11 @@
 <html>
 
 <head>
-
+	<link href='https://fonts.googleapis.com/css?family=Patua+One' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" type="text/css" href="configurator-files/config.css">
 
 	<body>
+		<h3 id="exit"><a href="../web-developer.html"><< Joel W Nelson</h3></a>
 		<div class="container">
 			<h1>Customize Your Mountain Bike</h1>
 			<form id="bike-configurator" class="column left">
@@ -34,14 +35,23 @@
 
 
 			<div class="column right">
+				<div class="mountain-bike-pic">
 				<div class="small-container">
+					
+					<div id="default">
+						<h4>Build a Custom Mountain Bike</h4>
+						<p>Select from the options <span id="direction">above</span> to build your own customized mountain bike.</p>
+					</div>
+					
 					<div id="output">
 						<img id="photo">
-						<div id="text-block">
+						<div class="text-block">
 							<h4>Custom Mountain Bike</h4>
 							<p id="description"></p>
-							<p id="price"></p>
+							<p id="price" class="bold"></p>
 						</div>
+													 													 
+													 </div>
 					</div>
 				</div>
 			</div>

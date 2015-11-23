@@ -130,6 +130,7 @@ function buildBike() {
 	print(description, "description");
 	print(price, "price");
 	
+	$("#default").hide();
 	$("#output").show();
 		}
 }
@@ -141,5 +142,5 @@ function print(text, id) {
 
 $("#reset-button").click(function() {
 	$("#output").hide();
-	
+	$("#default").show();
 });
