@@ -22,11 +22,6 @@ function displayPoem(userText, topPosition) {
 	});
 	
 	canvas.add(printText);
-	
-	//Hide form, show "new" button
-//	$(".poem").hide();
-//	$(".controls").show();
-		//.css("display", "block");
 }
 
 //Allow user to add text to canvas
@@ -64,20 +59,26 @@ $("#save-canvas-button").click(function(){
     window.open(canvas.toDataURL('png'));
 });
 
+
+
 //Poetry
 $(document).ready(function() {
-	var poemId = [
-		"ashes-ashes",
-		"drinking-hole",
-		"body-washer"
-	];
+	var poemId = [];
+	
+	$("p.poem").each(function() {
+		var getId = $(this).attr("id");
+		poemId.push(getId)
+	});
 	
 	var randomNumber = Math.floor(Math.random() * poemId.length);
 	var showPoem = poemId[randomNumber];
 	var input = "input[value='" + showPoem + "']";
 	
+	$(".selected-title .credit").hide();
+//	$(".selected-title").removeClass("selected-title");
 	$(input).attr("checked", "checked");
-	$(input).next().addClass("selected-title")
+	$(input).next().addClass("selected-title");
+	$(".selected-title .credit").show();
 	$("#" + showPoem).show();
 	$("#" + showPoem + "-title").show();
 });
@@ -92,16 +93,14 @@ $("input[type=radio]").click(function () {
 	$("#create-new-poem").html("Create your own blackout/erasure poetry");
 	$("#save-canvas-button").css("display", "none");
 
+	$(".selected-title .credit").hide();
 	$(this).siblings().removeClass("selected-title");
 	$(".poem").hide();
 	$(this).next().addClass("selected-title");
+	$(".selected-title .credit").show();
 	
 	$(title).show();
 	$(poem).show();
-
-
-//	}
-//	canvas.clear().renderAll();
 });
 
 

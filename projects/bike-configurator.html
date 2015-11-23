@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+	<link rel="stylesheet" type="text/css" href="config.css">
+
+	<body>
+		<div class="container">
+			<h1>Customize Your Mountain Bike</h1>
+			<form id="bike-configurator" class="column left">
+
+				<label for="frameSize">Frame Size:</label>
+				<select name="frame" id="frameSize">
+				</select>
+
+				<label for="frame-size">Drivetrain:</label>
+				<select name="drivetrain" id="drivetrain">
+				</select>
+
+				<label for="fork">Fork:</label>
+				<select name="fork" id="fork">
+				</select>
+
+				<label for="wheels">Wheels:</label>
+				<select name="wheels" id="wheels">
+				</select>
+
+
+				<button type="button" id="generate-button" class=" button" onclick="buildBike()">Generate</button>
+
+				<button type="button" id="reset-button" class="button" onclick="reset()">Reset</button>
+			</form>
+
+
+			<div class="column right">
+				<div class="small-container">
+					<div id="description">
+						<img id="photo" src="http://placekitten.com/g/400/200">
+						<div id="output">
+							<h4>Custom Mountain Bike</h4>
+							<p id="output"></p>
+						</div>
+					</div>
+				</div>
+			</div>
+
+
+
+		</div>
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+		<script src="configurator.js"></script>
+	</body>
+
+</html>

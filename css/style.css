@@ -21,9 +21,8 @@ ul {
 	display: none;
 }
 
-.page-heading {
-	text-align: center;
-	font-size: 2.5em;
+.page-header {
+	font-size: 2.3em;
 }
 
 #home-page,
@@ -62,7 +61,6 @@ ul {
 	border-radius: 8px;
 }
 
-
 .contact-links {
 	margin-top: 30px;
 	text-align: center;
@@ -70,6 +68,12 @@ ul {
 
 .copyright {
 	margin-top: 5px;
+}
+
+@media screen and (min-width: 768px) {
+	.page-header {
+		font-size: 3em;
+	}
 }
 
 
@@ -104,6 +108,14 @@ Nav
 	height: 85px;
 	box-shadow: 0px 2px 5px #908070;
 	width: 100%;
+}
+
+.header-text {
+	position: relative;
+	height: 100%;
+	width: 100%;
+	max-width: 1200px;
+	margin: -10px auto;
 }
 
 .col-xs-12.header {
@@ -253,16 +265,6 @@ About
 	display: none;
 }
 
-/*
-#canvas-container {
-	margin: 0 auto;
-	width: 360px;
-	border: 1px solid rgba(144, 128, 112, .3);
-	box-shadow: 2px 2px 5px #908070;
-	border-radius: 8px;
-}
-*/
-
 #save-canvas-button {
 	display: none;
 }
@@ -292,6 +294,7 @@ legend {
 label,
 input[type="radio"] {
 	display: block;
+	padding-bottom: 1px
 }
 
 .radio label {
@@ -299,30 +302,47 @@ input[type="radio"] {
 }
 
 .selected-title {
+	position: relative;
+	top: 3px;
 	font-size: 1.2em;
-	color: #000;
+	color: #222;
+	line-height: 1em;
+	padding-bottom: 5px;
+	text-shadow: 0px 0px 5px rgba(255, 255, 255, .8);
 }
 
-#poetry-wrap {
-	margin-bottom: 15px;
+.credit {
+	display: none;
+	font-size: .8em;
+	color: #232323;
+}
+
+.lit-mag {
+	font-style: italic;
 }
 
 
-/* Poetry Modal ******************
 
-#poetry-input {
-	display: block;
+/* Poetry Modal ******************/
+
+.modal { 
+	margin: auto;
+}
+
+.modal-title {
 	text-align: center;
+}
+
+#input-text {
+	top: 0;
+	width: 340px;
+	min-height: 340px;
+	resize: vertical;
+	font-size: 16px;
 }
 
 
 /* Poetry Text *******************/
-
-#input-text {
-	top: 0;
-	width: 320px;
-	min-height: 320px;
-}
 
 .poem {
 	position: absolute;
@@ -348,31 +368,34 @@ input[type="radio"] {
 /* Color Select *******************/
 
 .controls {
-	min-height: 60px;
+	min-height: 30px;
+	width: 360px;
 	margin: 0 auto;
-	border-radius: 5px;
-	width: 100%;
+/*	width: 100%;*/
 	overflow: hidden;
+}
+
+.controls h2 {
+	font-size: 1.875em;
+	margin: 3px;
 }
 
 .controls ul {
 	list-style: none;
 	margin: 0;
 	float: left;
-	padding: 10px 0 20px;
+	padding: 10px 0 5px;
 	width: 100%;
 	text-align: center;
 }
 
 .controls ul li {
 	display: inline-block;
-	margin: 0 5px 10px;
-	height: 54px;
-	width: 54px;
-	border-radius: 60px;
+	margin: 0 10px 10px;
+	height: 30px;
+	width: 40%;
+	border-radius: 90px;
 	cursor: pointer;
-	border: 1px solid black;
-	box-shadow: 0 3px 0 0 #222;
 }
 
 .black {
@@ -381,4 +404,19 @@ input[type="radio"] {
 
 .white {
 	background: #fff;
+}
+
+@media screen and (min-width: 768px) {
+	.controls {
+		margin-top: 30px;	
+	}
+	
+	.controls ul li {
+		display: inline-block;
+		margin: 0 10px 10px;
+		height: 40px;
+		width: 80px;
+		border-radius: 90px;
+		cursor: pointer;
+	}
 }

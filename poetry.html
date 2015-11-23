@@ -13,9 +13,10 @@
 <body>
 
 	<!--Header---------------------------->
-	<div class="container-fluid" id="custom-header">
+	<div class="container" id="custom-header">
 		<div class="row">
 			<div class="translucent-layer">
+				<div class="header-text">
 				<div class="col-xs-12 col-sm-6 header">
 					<h1 id="nav-name"><a href=index.html>Joel W Nelson</a></h1>
 				</div>
@@ -38,6 +39,7 @@
 					</div>
 				</ul>
 			</div>
+			</div>
 		</div>
 	</div>
 
@@ -53,12 +55,14 @@
 					<form id="poetry-title-list">
 						<legend class="text-center">Select:</legend>
 						<div class="radio">
-							<input type="radio" name="poetry" id="1" value="ashes-ashes">
-							<label for="1">Ashes, Ashes</label>
-							<input type="radio" name="poetry" id="2" value="drinking-hole">
-							<label for="2">The Drinking Hole</label>
-							<input type="radio" name="poetry" id="3" value="body-washer">
-							<label for="3">The Body Washer</label>
+							<input type="radio" name="poetry" id="1" value="ashes-ashes"/>
+							<label for="1">Ashes, Ashes<span class="credit"><br>(First published in the <i class="lit-mag">Bellevue Review</i>)</span></label>
+							
+							<input type="radio" name="poetry" id="2" value="drinking-hole"/>
+							<label for="2">The Drinking Hole<span class="credit"><br>(First published in <i class="lit-mag">A Narrow Fellow</i>)</span></label>
+							
+							<input type="radio" name="poetry" id="3" value="body-washer"/>
+							<label for="3">The Body Washer<span class="credit"><br>(First published in <i class="lit-mag">The Louisville Review</i>)</span></label>
 						</div>
 					</form>
 					<div class="canvas-buttons">
@@ -67,22 +71,32 @@
 						<button type="button" class="btn btn-default" id="save-canvas-button" data-toggle="modal" data-target="#save-canvas">Save or Print</button>
 					</div>
 				</div>
+				<!--Color controls-->
+					<div class="controls text-center">
+						<h2>Draw / Erase</h3>
+						<ul>
+							<li class="white-wrap black selected-color"></li>
+							<li class="white-wrap white"></li>
+						</ul>
+					</div>
 			</div>
 
 
-			<!--Poetry canvas ------------------------->
+			<!--Poetry Canvas------------------------->
 
 			<div class="col-sm-6 col-lg-5">
 				<div class="white-wrap">
 					<canvas id="poetry-canvas"></canvas>
 
 					<!--Color controls-->
+<!--
 					<div class="controls">
 						<ul>
 							<li class="black selected-color"></li>
 							<li class="white"></li>
 						</ul>
 					</div>
+-->
 
 					<!-- Poetry----------------------->
 
@@ -98,6 +112,11 @@
 					<p id="drinking-hole" class="poem">
 						The baboons are grunting
 						<br> and barking like dogs</p>
+					
+					<h2 id="drinking-hole-title" class="poem poem-title">The Drinking Hole</h2>
+					<p id="drinking-hole" class="poem">
+						The baboons are grunting
+						<br> and barking like dogs</p>
 
 				</div>
 			</div>
@@ -109,7 +128,7 @@
 					<div class="modal-content">
 						<div class="modal-header">
 							<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-							<h4 class="modal-title">Type text to create found poem</h4>
+							<h3 class="modal-title">Type text to create found poem</h3>
 						</div>
 						<div class="modal-body">
 							<form id="poetry-input">
@@ -124,17 +143,19 @@
 			</div>
 		</div>
 
+</div>
 
-
-	<div class="row contact-links">
+	<div class="container contact-links">
+		<footer class="footer">
 			<a class="fa fa-twitter-square fa-2x" target="_blank" href="https://twitter.com/JoelWNelson"></a>
 			<a class="fa fa-github-square fa-2x" target="_blank" href="https://twitter.com/JoelWNelson"></a>
 			<a class="fa fa-linkedin-square fa-2x" target="_blank" href="https://twitter.com/JoelWNelson"></a>
 			<a class="fa fa-envelope-square fa-2x" target="_blank"></a>
 			<p class="copyright">&copy; 2015 Joel Nelson</p>
+			</footer>
 	</div>
 	
-		</div>
+		
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
 	<script src="js/fabric.js"></script>

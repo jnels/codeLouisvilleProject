@@ -1,0 +1,129 @@
+* {
+	box-sizing: border-box;
+}
+
+body {
+	font-family: "Patua One", sans-serif;
+	background: #384047;
+	color: white;
+}
+
+h1 {
+	color: #fff;
+	text-align: center;
+	margin-top: 15px;
+}
+
+h3 {
+	font-size: 1em;
+	margin: 0;
+}
+
+h3:hover {
+	color: rgba(255, 255, 255, .4);
+}
+
+ul {
+	list-style: none;
+	margin: 0 auto;
+	padding: 0;
+	display: block;
+	max-width: 850px;
+	text-align: center;
+}
+
+ul li {
+	display: inline-block;
+	padding: 2px;
+	background: rgba(255, 255, 255, .4);
+	margin:10px;
+}
+
+ul li img {
+	display: block;
+	width: 180px;
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+#overlay {
+  background: rgba(0, 0, 0, 0.7);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: none;
+  text-align: center;
+}
+
+#overlay img {
+	width: 100%;
+	margin-top: 80px;
+}
+
+#next,
+#previous,
+#overlayContent {
+	height: 100%;
+	float: left;
+}
+
+#next, 
+#previous {
+	width: 25%;
+	padding: 23% 20px 20px;
+	font-size: 3em;
+}
+
+#next {
+	text-align: left;
+}
+
+#previous {
+	text-align: right;
+}
+
+#overlayContent {
+	width: 50%;
+}
+
+.nav-pics:hover, #close:hover {
+	text-shadow: 0px 0px 10px white;
+	cursor: pointer;
+}
+
+li:hover {
+	box-shadow: 0px 0px 10px white;
+}
+
+#close {
+	position: fixed;
+	top: 10px;
+	right: 10px;
+	margin: 0;
+	padding: 0px 5px 2px;
+	font-size: 20px;
+	color: rgba(255, 255, 255, .7);
+	border-radius: 3px;
+	background-color: rgba(255, 255, 255, .1);
+	box-shadow: 0px 0px 2px rgba(255, 255, 255, .5);
+	cursor: pointer;
+}
+
+.no-select {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.copyright {
+	text-align: center;
+	margin-top: 30px;
+}
