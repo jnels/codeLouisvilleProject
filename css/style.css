@@ -61,11 +61,6 @@ ul {
 	border-radius: 8px;
 }
 
-.contact-links {
-	margin-top: 30px;
-	text-align: center;
-}
-
 .copyright {
 	margin-top: 5px;
 }
@@ -419,4 +414,24 @@ input[type="radio"] {
 		border-radius: 90px;
 		cursor: pointer;
 	}
+}
+
+/*****************************
+	Footer
+*****************************/
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  margin-bottom: 80px;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 60px;
+	text-align: center;
 }
