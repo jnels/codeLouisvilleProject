@@ -2,6 +2,21 @@
 	box-sizing: border-box;
 }
 
+/*****************************
+Font
+*****************************/
+
+.bold {
+	font-weight: bold;
+}
+
+.capitalize {
+	text-transform: capitalize;
+}
+
+/*****************************
+Form
+*****************************/
 .container {
 	overflow: hidden;
 	max-width: 900px;
@@ -21,6 +36,17 @@
 h1 {
 	text-align: center;
 	margin: 5px;
+}
+
+h4 {
+	text-align: center;
+	font-size: 1.3em;
+	padding-left: 7px;
+	margin: 0;
+}
+
+ul {
+	margin: 0;
 }
 
 label {
@@ -44,30 +70,43 @@ button {
 	border-radius: 5px;
 }
 
-
 .small-container {
 	background-color: rgba(255, 255, 255, .85);
-	height: 250px;
+	min-height: 250px;
 	width: 100%;
 	border-radius: 10px;
+	overflow: auto;
 }
 
-#description {
+#output {
 	display: none;
 }
 
-#photo {
-	width: 30%;
+#text-block {
+/*	float: right;*/
+	max-width: 360px;
+	padding-right: 10px;
 	margin: 0 auto;
+}
+
+#photo {
+/*	float: left;*/
+	display: block;
+	width: 50%;
+	padding: 10px;
+	margin: 0 auto;
+	max-width: 300px;
+}
+
+#price {
 	text-align: center;
+	font-weight: bold;
+	font-size: 1.3em;
 }
 
-
-@media screen and (min-width: 600px) {
-	.column {
-		width: 50%;
-	}
-}
+/*****************************
+Media Queries
+*****************************/
 
 @media screen and (min-width: 800px) {
 	.column.left {
@@ -76,5 +115,19 @@ button {
 	
 	.column.right {
 		width: 60%;
+	}
+	
+	#text-block {
+		float: right;
+		width: 50%;
+		margin-top: 40px;
+	}
+	
+	#photo {
+		display: inline-block;
+		clear: none;
+		float: left;
+		margin-top: 55px;
+		width: 50%;
 	}
 }

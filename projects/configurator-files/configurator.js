@@ -1,6 +1,6 @@
 var data = {
 
-	frameSize: {
+	"frame Size": {
 		'Small (15")': {
 			price: 500
 		},
@@ -16,13 +16,13 @@ var data = {
 	},
 
 	drivetrain: {
-		"1 x 11": {
+		"1x11": {
 			price: 800
 		},
-		"2 x 10": {
+		"2x10": {
 			price: 500
 		},
-		"3 x 10": {
+		"3x10": {
 			price: 400
 		}
 	},
@@ -37,11 +37,11 @@ var data = {
 	},
 
 	wheels: {
-		'29" standard rim': {
+		'29" Standard Rim': {
 			price: 400
 		},
-		'29" carbon rim': {
-			price: 600
+		'29" Carbon Rim': {
+			price: 800
 		}
 	}
 };
@@ -49,7 +49,7 @@ var data = {
 
 //Prepare data to be formed into select
 var frameSizeSelect = getId("frameSize");
-appendSelect(data.frameSize, frameSizeSelect);
+appendSelect(data["frame Size"], frameSizeSelect);
 
 var drivetrainSelect = getId("drivetrain");
 appendSelect(data.drivetrain, drivetrainSelect);
@@ -60,11 +60,9 @@ appendSelect(data.fork, forkSelect);
 var wheelsSelect = getId("wheels");
 appendSelect(data.wheels, wheelsSelect);
 
-//var objectArray = [];
 
 function getId(id) {
 	var varName = document.getElementById(id);
-	//objectArray.push(varName);
 	return varName;
 }
 
@@ -83,27 +81,65 @@ function appendSelect(componentList, element) {
 }
 
 
+function checkValue(variable, value) {
+	if (variable === value) {
+		alert("Please make sure all values are selected.");
+	} else {
+		return;
+	}
+}
+
 function buildBike() {
 	var price = 0;
+	var counter = 0;
+	
+	var description = "<ul class='capitalize'>";
 	
 	for (prop in data) {
-		var selectedId = getId(prop);
+
+		var propNoSpaces = prop.replace(/\s+/g, '')
+		
+		var selectedId = getId(propNoSpaces);
 		var selectedValue = selectedId.value;
-		var componentPrice = data[prop][selectedValue].price;
-		price += componentPrice;
+		
+		if (selectedValue === "-- select option --") {
+			counter += 1;
+		} else {
+			var componentPrice = data[prop][selectedValue].price;
+			description += "<li><span class='bold'>" + prop + ":</span> " + selectedValue + "</li>";
+			price += componentPrice;
+		
+			//Change picture
+			if (prop === "fork") {
+				if (selectedValue === "Rigid Carbon") {
+					$("#photo").attr("src", "configurator-files/img/red-mtb-rigid-hi.png");
+				} else {
+					$("#photo").attr("src", "configurator-files/img/red-mtb-hi.png");
+				}
+			}		
+		}
 	}
-	print(price);
+	
+	if (counter > 1) {
+		alert("Please make sure all options are selected.");
+	} else {
+	
+	description += "</ul>";
+	price = "Price: $" + price ;
+	
+	print(description, "description");
+	print(price, "price");
+	
+	$("#output").show();
+		}
 }
 	
-function print(x) {
-	var printout = getId("output");
-	printout.innerHTML = "$" + x;
+function print(text, id) {
+	var printout = getId(id);
+	printout.innerHTML = text;
 }
 
-$("#generate-button").click(function() {
-	$("#description").show();
-});
-
 $("#reset-button").click(function() {
-	$("#description").hide();
+	$("#output").hide();
+	
 });
