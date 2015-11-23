@@ -8,7 +8,7 @@ Font
 
 body {
 	font-family: "Patua One";
-	background-color: rgba(10, 29, 42, .15);
+	background-color: rgba(2, 54, 60, .15);
 }
 
 p {
@@ -36,13 +36,19 @@ a {
 }
 
 a:hover {
-	color: rgba(10, 29, 42, .7);
+	color: rgba(2, 54, 60, .7);
 }
 
 #exit {
 	text-align: left;
 	margin: 0 5px 15px;
 	font-size: 1em;
+}
+
+.copyright {
+	text-align: center;
+	width: 100%;
+	margin-top: 30px;
 }
 
 /*****************************
@@ -52,7 +58,7 @@ Form
 	overflow: hidden;
 	max-width: 900px;
 	margin: 0 auto;
-	background-color: rgba(10, 29, 42, 0.70);
+	background-color: rgba(2, 54, 60, 0.92);
 	border-radius: 10px;
 	box-shadow: 1px 1px 10px black;
 }
@@ -148,11 +154,20 @@ button {
 	font-size: 1.3em;
 }
 
+#listedAbove {
+	display: inline;
+}
+
+#listedLeft {
+	display: none;
+}
+
 /*****************************
 Media Queries
 *****************************/
 
 @media screen and (min-width: 800px) {
+	
 	.column.left {
 		width: 40%;
 	}
@@ -166,6 +181,7 @@ Media Queries
 		width: 50%;
 		margin-top: 40px;
 	}
+
 	
 	#photo {
 		display: inline-block;
@@ -175,7 +191,15 @@ Media Queries
 		width: 50%;
 	}
 	
+	#listedLeft {
+		display: inline;
+	}
+	
+	#listedAbove {
+		display: none;
+	}
+	
 	.mountain-bike-pic {
 	background: url("img/mountain-biking.jpg") no-repeat center -210px;
-}
+	}
 }
