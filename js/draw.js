@@ -4,18 +4,18 @@ var drawColor;
 //Establish canvas
 var canvas = new fabric.Canvas("poetry-canvas", {
 		isDrawingMode: true,
-		height: 480,
+		height: 560,
 		width: 360
   });
 
-canvas.freeDrawingBrush.width = 15;
+canvas.freeDrawingBrush.width = 14;
 
-function displayPoem(userText, topPosition) {
+function displayPoem(userText) {
 	var printText = new fabric.Textbox(userText, {  
-		width: 330,
+		width: 340,
 		height: 460,
-		top: 20,
-		left: 15,
+		top: 15,
+		left: 10,
 		fontFamily: "Merriweather",
 		fontSize: 16,
 		textAlign: "left"
@@ -37,7 +37,7 @@ $("#submit-button").click(function(){
 	//Put value of textarea into canvas
   $userText = $("#input-text").val();
 	$("#input-text").val("");
-	displayPoem($userText, 30)
+	displayPoem($userText)
 });
 
 
@@ -59,8 +59,6 @@ $("#save-canvas-button").click(function(){
     window.open(canvas.toDataURL('png'));
 });
 
-
-
 //Poetry
 $(document).ready(function() {
 	var poemId = [];
@@ -75,7 +73,6 @@ $(document).ready(function() {
 	var input = "input[value='" + showPoem + "']";
 	
 	$(".selected-title .credit").hide();
-//	$(".selected-title").removeClass("selected-title");
 	$(input).attr("checked", "checked");
 	$(input).next().addClass("selected-title");
 	$(".selected-title .credit").show();

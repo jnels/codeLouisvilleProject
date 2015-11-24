@@ -85,12 +85,14 @@ body {
 h1,
 h2,
 h3,
-h4,
-h5,
 .navigation,
 legend {
 	font-family: "Amatic SC", Arial, serif;
 	font-weight: 700;
+}
+
+.italic {
+	font-style: italic;
 }
 
 
@@ -135,27 +137,32 @@ Nav
 
 @media screen and (min-width: 768px) {
 	#custom-header {
-		height: 100px;
+		height: 120px;
 	}
+	
 	#nav-name {
 		font-size: 4em;
 		text-align: left;
 		margin-left: 8%;
-		margin-top: 28px;
+		margin-top: 38px;
 	}
+	
 	.nav-link {
 		text-align: center;
 	}
+	
 	#nav-about {
-		margin-top: 75px;
+		margin-top: 90px;
 		font-size: 2.3em;
 	}
+	
 	#nav-poetry {
-		margin-top: 45px;
+		margin-top: 60px;
 		font-size: 2.3em;
 	}
+	
 	#nav-web {
-		margin-top: 65px;
+		margin-top: 80px;
 		font-size: 2.3em;
 	}
 }
@@ -234,7 +241,8 @@ About
 **************************************/
 
 .color-wrap h4 {
-	font-size: 1.4em;
+	font-size: 1em;
+	font-weight: 700;
 	margin-bottom: 2px;
 }
 
@@ -312,12 +320,6 @@ input[type="radio"] {
 	color: #232323;
 }
 
-.lit-mag {
-	font-style: italic;
-}
-
-
-
 /* Poetry Modal ******************/
 
 .modal { 
@@ -329,11 +331,12 @@ input[type="radio"] {
 }
 
 #input-text {
-	top: 0;
+	display: block;
 	width: 340px;
-	min-height: 340px;
+	min-height: 360px;
 	resize: vertical;
 	font-size: 16px;
+	margin: 0 auto;
 }
 
 
@@ -343,7 +346,7 @@ input[type="radio"] {
 	position: absolute;
 	top: 45px;
 	text-align: left;
-	font-size: 16px;
+	font-size: 15px;
 	padding-left: 10px;
 	margin-top: 10px;
 	z-index: -1;

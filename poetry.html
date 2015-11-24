@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <title>Joel W Nelson | Poet | Web Developer</title>
-
+<meta charset="UTF-8">
 <head>
 	<link rel="stylesheet" type="text/css" href="css/normalize.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
@@ -13,32 +13,32 @@
 <body>
 
 	<!--Header---------------------------->
-	<div class="container" id="custom-header">
+	<div class="container-fluid" id="custom-header">
 		<div class="row">
 			<div class="translucent-layer">
-				<div class="header-text">
-					<div class="col-xs-12 col-sm-6 header">
-						<h1 id="nav-name"><a href=index.html>Joel W Nelson</a></h1>
-					</div>
-
-					<ul id="nav-list">
-						<div class="col-xs-4 col-sm-2 header">
-							<li>
-								<h2 id="nav-about" class="nav-link"><a href=about.html>About</a></h2>
-							</li>
-						</div>
-						<div class="col-xs-4 col-sm-2 header">
-							<li>
-								<h2 id="nav-poetry" class="nav-link"><a href=poetry.html>Poetry</a></h2>
-							</li>
-						</div>
-						<div class="col-xs-4 col-sm-2 header">
-							<li>
-								<h2 id="nav-web" class="nav-link"><a href=web-developer.html>Web</a></h2>
-							</li>
-						</div>
-					</ul>
+				<div class="col-xs-12 col-sm-6 header">
+					<h1 id="nav-name"><a href=index.html>Joel W Nelson</a></h1>
 				</div>
+
+				<ul id="nav-list">
+					<li>
+						<div class="col-xs-4 col-sm-2 header">
+							<h2 id="nav-about" class="nav-link"><a href=about.html>About</a></h2>
+						</div>
+					</li>
+
+					<li>
+						<div class="col-xs-4 col-sm-2 header">
+							<h2 id="nav-poetry" class="nav-link"><a href=poetry.html>Poetry</a></h2>
+						</div>
+					</li>
+
+					<li>
+						<div class="col-xs-4 col-sm-2 header">
+							<h2 id="nav-web" class="nav-link"><a href=web-developer.html>Web</a></h2>
+						</div>
+					</li>
+				</ul>
 			</div>
 		</div>
 	</div>
@@ -56,13 +56,13 @@
 						<legend class="text-center">Select:</legend>
 						<div class="radio">
 							<input type="radio" name="poetry" id="1" value="ashes-ashes" />
-							<label for="1">Ashes, Ashes<span class="credit"><br>(First published in the <i class="lit-mag">Bellevue Review</i>)</span></label>
+							<label for="1">Ashes, Ashes<span class="credit"><br>(First published in the <i class="italic">Bellevue Review</i>)</span></label>
 
 							<input type="radio" name="poetry" id="2" value="drinking-hole" />
-							<label for="2">The Drinking Hole<span class="credit"><br>(First published in <i class="lit-mag">A Narrow Fellow</i>)</span></label>
+							<label for="2">The Drinking Hole<span class="credit"><br>(First published in <i class="italic">A Narrow Fellow</i>)</span></label>
 
 							<input type="radio" name="poetry" id="3" value="body-washer" />
-							<label for="3">The Body Washer<span class="credit"><br>(First published in <i class="lit-mag">The Louisville Review</i>)</span></label>
+							<label for="3">The Body Washer<span class="credit"><br>(First published in <i class="italic">The Louisville Review</i>)</span></label>
 						</div>
 					</form>
 					<div class="canvas-buttons">
@@ -88,35 +88,75 @@
 				<div class="white-wrap">
 					<canvas id="poetry-canvas"></canvas>
 
-					<!--Color controls-->
-<!--
-					<div class="controls">
-						<ul>
-							<li class="black selected-color"></li>
-							<li class="white"></li>
-						</ul>
-					</div>
--->
-
 					<!-- Poetry----------------------->
 
 					<h2 id="ashes-ashes-title" class="poem poem-title">Ashes, Ashes</h2>
 					<p id="ashes-ashes" class="poem">
-						It is not the pull of the moon
-						<br> or the spinning of the earth
-						<br> that drives the tide of sand
-						<br> to the sea. Desert begets desert
-						<br> a city falls into itself......</p>
+						It is not the pull of the moon or the spinning
+						<br>of the earth that drives the tide of sand
+						<br>
+						<br>to the sea—desert begets desert, a city falls
+						<br>into itself. A man cuts a tree to plant a field
+						<br>
+						<br>to build a fire, and his house turns to sand
+						<br>He butchers a cow, but already the vulture
+						<br>
+						<br>has picked it clean. Of what use is a seed
+						<br>where a weed will not grow, or a bucket
+						<br>
+						<br>in a river of salt? Desert begets desert,
+						<br>bone begets bone, a city falls into itself.
+					</p>
 
 					<h2 id="drinking-hole-title" class="poem poem-title">The Drinking Hole</h2>
 					<p id="drinking-hole" class="poem">
-						The baboons are grunting
-						<br> and barking like dogs</p>
+					The baboons are grunting
+					<br>and barking like dogs,
+					<br>distorting their faces
+					<br>and shaking the trees.
+						<br>
+						<br>They circle around us
+						<br>clutching their fists
+						<br>around sticks
+						<br>and throwing stones.
+						<br>
+						<br><span class="italic">Why are you swimming
+						<br>down there in the river?
+						<br>Why are you swimming
+						<br>in our drinking hole?</span>
+						<br>
+						<br>We stand on a rock
+						<br>surrounded by the current.
+						<br>Not one of us dares
+						<br>to jump into the stream.
+					</p>
 
-					<h2 id="drinking-hole-title" class="poem poem-title">The Drinking Hole</h2>
-					<p id="drinking-hole" class="poem">
-						The baboons are grunting
-						<br> and barking like dogs</p>
+					<h2 id="body-washer-title" class="poem poem-title">The Body Washer</h2>
+					<p id="body-washer" class="poem">
+						She wears the clothes of a dead woman—
+						<br>a black robe and a faded head scarf.
+						<br>
+						<br>"They're almost too fancy," she says
+						<br>without glancing from the bullet wound.
+						<br>
+						<br>"I try to stay simple. I don't care too much
+						<br>about things." Her days are spent alone
+						<br>
+						<br>with malformed babies, headless
+						<br>professors, and faceless wives of diplomats.
+						<br>
+						<br>"Everything has its time," she says
+						<br>as she cuts a girl's clothing away, carefully
+						<br>
+						<br>keeping the <span class=italic>awrah</span> hidden under a sheet.
+						<br>She dips her hand into a bucket and begins
+						<br>
+						<br>to wash—first the head, then the body.
+						<br>"When you understand the unknown,
+						<br>
+						<br>you can no longer call it your enemy—
+						<br>the same bath, the same bowl."
+						</p>
 
 				</div>
 			</div>
