@@ -95,6 +95,10 @@ legend {
 	font-style: italic;
 }
 
+.bold {
+	font-weight: bold;
+}
+
 
 /**************************************
 Nav
@@ -251,6 +255,15 @@ About
 	max-width: 200px;
 	min-width: 150px;
 	margin: 0 10px 5px 0;
+}
+
+.link {
+	color: #271F44;
+	text-decoration: underline;
+}
+
+.link a:hover {
+	text-shadow: -1px -1px #000;
 }
 
 @media screen and (max-width: 320px) {
@@ -427,6 +440,7 @@ html {
   position: relative;
   min-height: 100%;
 }
+
 body {
   margin-bottom: 80px;
 }

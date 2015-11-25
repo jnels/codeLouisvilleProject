@@ -57,7 +57,7 @@ Form
 .container {
 	overflow: hidden;
 	max-width: 900px;
-	margin: 0 auto;
+	margin: 40px auto;
 	background-color: rgba(2, 54, 60, 0.92);
 	border-radius: 10px;
 	box-shadow: 1px 1px 10px black;
